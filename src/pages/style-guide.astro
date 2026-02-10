@@ -1,0 +1,657 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const codeExample = `GET /api/v3/conversations/:id/participants
+Content-Type: application/json
+
+{
+  "n_participants": 1847,
+  "n_statements":   312,
+  "n_votes":        48201,
+  "group_clusters": 3,
+  "consensus_statements": 27
+}`;
+---
+
+<Layout title="Odysseia — Design System" description="Living style guide for the Polis website redesign">
+
+<!-- ============================================================
+     HEADER / NAV PREVIEW
+     ============================================================ -->
+<header class="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur-sm">
+	<nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+		<div class="flex items-center gap-2">
+			<div class="flex h-8 w-8 items-center justify-center rounded-md bg-polis-500 font-display text-sm font-bold text-white">P</div>
+			<span class="font-display text-lg font-semibold text-slate-900">polis</span>
+		</div>
+		<div class="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex">
+			<a href="#colors" class="hover:text-polis-600">Colors</a>
+			<a href="#typography" class="hover:text-polis-600">Typography</a>
+			<a href="#buttons" class="hover:text-polis-600">Buttons</a>
+			<a href="#cards" class="hover:text-polis-600">Cards</a>
+			<a href="#sections" class="hover:text-polis-600">Sections</a>
+		</div>
+		<a href="#" class="rounded-md bg-polis-700 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-polis-800">Start a conversation</a>
+	</nav>
+</header>
+
+<main>
+
+<!-- ============================================================
+     HERO: DEMONSTRATE THE VIBE
+     ============================================================ -->
+<section class="relative overflow-hidden bg-white px-6 py-28 md:py-36">
+	<!-- Subtle grid background pattern (CSS-based) -->
+	<div class="hero-grid pointer-events-none absolute inset-0 opacity-[0.04]"></div>
+	<div class="relative mx-auto max-w-4xl text-center">
+		<p class="mb-4 font-mono text-sm font-medium tracking-wide text-polis-500">ODYSSEIA DESIGN SYSTEM v0.1</p>
+		<h1 class="mb-6 text-5xl font-bold leading-[1.1] tracking-[-0.02em] text-slate-900 md:text-7xl">
+			Space Age<br/>Civic Tech
+		</h1>
+		<p class="mx-auto max-w-2xl text-lg leading-relaxed text-slate-600 md:text-xl">
+			A living style guide for the Polis website redesign. Every color, typeface, and component token rendered in the browser — so we can see the system breathe.
+		</p>
+	</div>
+</section>
+
+
+<!-- ============================================================
+     COLORS
+     ============================================================ -->
+<section id="colors" class="border-t border-slate-200 bg-slate-50 px-6 py-20">
+	<div class="mx-auto max-w-6xl">
+		<p class="mb-1 font-mono text-xs font-medium uppercase tracking-widest text-polis-500">01</p>
+		<h2 class="mb-2 text-3xl font-bold text-slate-900">Color</h2>
+		<p class="mb-12 max-w-2xl text-slate-600">Built around <code class="rounded bg-polis-50 px-1.5 py-0.5 text-sm text-polis-700">#03a9f4</code> — a bright, cyan-leaning blue that reads as optimistic and technical without being cold.</p>
+
+		<!-- Polis Blue -->
+		<h3 class="mb-4 text-lg font-semibold text-slate-800">Polis Blue — Primary</h3>
+		<div class="mb-10 grid grid-cols-5 gap-2 sm:grid-cols-11">
+			<div class="flex flex-col items-center gap-1.5">
+				<div class="h-14 w-full rounded-lg bg-polis-50 ring-1 ring-slate-200"></div>
+				<span class="font-mono text-[10px] text-slate-500">50</span>
+			</div>
+			<div class="flex flex-col items-center gap-1.5">
+				<div class="h-14 w-full rounded-lg bg-polis-100"></div>
+				<span class="font-mono text-[10px] text-slate-500">100</span>
+			</div>
+			<div class="flex flex-col items-center gap-1.5">
+				<div class="h-14 w-full rounded-lg bg-polis-200"></div>
+				<span class="font-mono text-[10px] text-slate-500">200</span>
+			</div>
+			<div class="flex flex-col items-center gap-1.5">
+				<div class="h-14 w-full rounded-lg bg-polis-300"></div>
+				<span class="font-mono text-[10px] text-slate-500">300</span>
+			</div>
+			<div class="flex flex-col items-center gap-1.5">
+				<div class="h-14 w-full rounded-lg bg-polis-400"></div>
+				<span class="font-mono text-[10px] text-slate-500">400</span>
+			</div>
+			<div class="flex flex-col items-center gap-1.5">
+				<div class="relative h-14 w-full rounded-lg bg-polis-500">
+					<div class="absolute inset-x-0 -bottom-0.5 mx-auto h-1 w-4 rounded-full bg-polis-500"></div>
+				</div>
+				<span class="font-mono text-[10px] font-bold text-polis-700">500</span>
+			</div>
+			<div class="flex flex-col items-center gap-1.5">
+				<div class="h-14 w-full rounded-lg bg-polis-600"></div>
+				<span class="font-mono text-[10px] text-slate-500">600</span>
+			</div>
+			<div class="flex flex-col items-center gap-1.5">
+				<div class="h-14 w-full rounded-lg bg-polis-700"></div>
+				<span class="font-mono text-[10px] text-slate-500">700</span>
+			</div>
+			<div class="flex flex-col items-center gap-1.5">
+				<div class="h-14 w-full rounded-lg bg-polis-800"></div>
+				<span class="font-mono text-[10px] text-slate-500">800</span>
+			</div>
+			<div class="flex flex-col items-center gap-1.5">
+				<div class="h-14 w-full rounded-lg bg-polis-900"></div>
+				<span class="font-mono text-[10px] text-slate-500">900</span>
+			</div>
+			<div class="flex flex-col items-center gap-1.5">
+				<div class="h-14 w-full rounded-lg bg-polis-950"></div>
+				<span class="font-mono text-[10px] text-slate-500">950</span>
+			</div>
+		</div>
+
+		<!-- Slate -->
+		<h3 class="mb-4 text-lg font-semibold text-slate-800">Slate — Neutrals</h3>
+		<div class="mb-10 grid grid-cols-5 gap-2 sm:grid-cols-11">
+			<div class="flex flex-col items-center gap-1.5">
+				<div class="h-14 w-full rounded-lg bg-slate-50 ring-1 ring-slate-200"></div>
+				<span class="font-mono text-[10px] text-slate-500">50</span>
+			</div>
+			<div class="flex flex-col items-center gap-1.5">
+				<div class="h-14 w-full rounded-lg bg-slate-100"></div>
+				<span class="font-mono text-[10px] text-slate-500">100</span>
+			</div>
+			<div class="flex flex-col items-center gap-1.5">
+				<div class="h-14 w-full rounded-lg bg-slate-200"></div>
+				<span class="font-mono text-[10px] text-slate-500">200</span>
+			</div>
+			<div class="flex flex-col items-center gap-1.5">
+				<div class="h-14 w-full rounded-lg bg-slate-300"></div>
+				<span class="font-mono text-[10px] text-slate-500">300</span>
+			</div>
+			<div class="flex flex-col items-center gap-1.5">
+				<div class="h-14 w-full rounded-lg bg-slate-400"></div>
+				<span class="font-mono text-[10px] text-slate-500">400</span>
+			</div>
+			<div class="flex flex-col items-center gap-1.5">
+				<div class="h-14 w-full rounded-lg bg-slate-500"></div>
+				<span class="font-mono text-[10px] text-slate-500">500</span>
+			</div>
+			<div class="flex flex-col items-center gap-1.5">
+				<div class="h-14 w-full rounded-lg bg-slate-600"></div>
+				<span class="font-mono text-[10px] text-slate-500">600</span>
+			</div>
+			<div class="flex flex-col items-center gap-1.5">
+				<div class="h-14 w-full rounded-lg bg-slate-700"></div>
+				<span class="font-mono text-[10px] text-slate-500">700</span>
+			</div>
+			<div class="flex flex-col items-center gap-1.5">
+				<div class="h-14 w-full rounded-lg bg-slate-800"></div>
+				<span class="font-mono text-[10px] text-slate-500">800</span>
+			</div>
+			<div class="flex flex-col items-center gap-1.5">
+				<div class="h-14 w-full rounded-lg bg-slate-900"></div>
+				<span class="font-mono text-[10px] text-slate-500">900</span>
+			</div>
+			<div class="flex flex-col items-center gap-1.5">
+				<div class="h-14 w-full rounded-lg bg-slate-950"></div>
+				<span class="font-mono text-[10px] text-slate-500">950</span>
+			</div>
+		</div>
+
+		<!-- Accent + Semantic -->
+		<h3 class="mb-4 text-lg font-semibold text-slate-800">Accent &amp; Semantic</h3>
+		<div class="flex flex-wrap gap-3">
+			<div class="flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-4 py-3">
+				<div class="h-8 w-8 rounded-md bg-amber-500"></div>
+				<div>
+					<p class="text-sm font-medium text-slate-800">Amber</p>
+					<p class="font-mono text-xs text-slate-400">#f59e0b</p>
+				</div>
+			</div>
+			<div class="flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-4 py-3">
+				<div class="h-8 w-8 rounded-md bg-success"></div>
+				<div>
+					<p class="text-sm font-medium text-slate-800">Success</p>
+					<p class="font-mono text-xs text-slate-400">#16a34a</p>
+				</div>
+			</div>
+			<div class="flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-4 py-3">
+				<div class="h-8 w-8 rounded-md bg-warning"></div>
+				<div>
+					<p class="text-sm font-medium text-slate-800">Warning</p>
+					<p class="font-mono text-xs text-slate-400">#f59e0b</p>
+				</div>
+			</div>
+			<div class="flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-4 py-3">
+				<div class="h-8 w-8 rounded-md bg-error"></div>
+				<div>
+					<p class="text-sm font-medium text-slate-800">Error</p>
+					<p class="font-mono text-xs text-slate-400">#dc2626</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<!-- ============================================================
+     TYPOGRAPHY
+     ============================================================ -->
+<section id="typography" class="border-t border-slate-200 bg-white px-6 py-20">
+	<div class="mx-auto max-w-6xl">
+		<p class="mb-1 font-mono text-xs font-medium uppercase tracking-widest text-polis-500">02</p>
+		<h2 class="mb-2 text-3xl font-bold text-slate-900">Typography</h2>
+		<p class="mb-12 max-w-2xl text-slate-600">
+			<strong class="font-display">Space Grotesk</strong> for display and headings — geometric, retro-futurist, literally has "Space" in the name.
+			<strong>Inter</strong> for body text — the workhorse.
+			<code class="rounded bg-slate-100 px-1.5 py-0.5 text-sm">JetBrains Mono</code> for code.
+		</p>
+
+		<!-- Type specimens -->
+		<div class="space-y-8">
+			<!-- Display -->
+			<div class="grid items-baseline gap-4 border-b border-slate-100 pb-8 md:grid-cols-[180px_1fr]">
+				<div>
+					<p class="font-mono text-xs text-slate-400">Display</p>
+					<p class="font-mono text-xs text-slate-400">60px / 700</p>
+				</div>
+				<h1 class="text-[3.75rem] font-bold leading-[1.1] tracking-[-0.02em] text-slate-900">Hear everyone.</h1>
+			</div>
+
+			<!-- H1 -->
+			<div class="grid items-baseline gap-4 border-b border-slate-100 pb-8 md:grid-cols-[180px_1fr]">
+				<div>
+					<p class="font-mono text-xs text-slate-400">Heading 1</p>
+					<p class="font-mono text-xs text-slate-400">48px / 700</p>
+				</div>
+				<h1 class="text-5xl font-bold leading-[1.15] text-slate-900">Find common ground</h1>
+			</div>
+
+			<!-- H2 -->
+			<div class="grid items-baseline gap-4 border-b border-slate-100 pb-8 md:grid-cols-[180px_1fr]">
+				<div>
+					<p class="font-mono text-xs text-slate-400">Heading 2</p>
+					<p class="font-mono text-xs text-slate-400">36px / 600</p>
+				</div>
+				<h2 class="text-4xl font-semibold leading-[1.2] text-slate-900">Real-time opinion clustering</h2>
+			</div>
+
+			<!-- H3 -->
+			<div class="grid items-baseline gap-4 border-b border-slate-100 pb-8 md:grid-cols-[180px_1fr]">
+				<div>
+					<p class="font-mono text-xs text-slate-400">Heading 3</p>
+					<p class="font-mono text-xs text-slate-400">24px / 600</p>
+				</div>
+				<h3 class="text-2xl font-semibold leading-[1.3] text-slate-900">How Polis works</h3>
+			</div>
+
+			<!-- H4 -->
+			<div class="grid items-baseline gap-4 border-b border-slate-100 pb-8 md:grid-cols-[180px_1fr]">
+				<div>
+					<p class="font-mono text-xs text-slate-400">Heading 4</p>
+					<p class="font-mono text-xs text-slate-400">20px / 600</p>
+				</div>
+				<h4 class="text-xl font-semibold leading-[1.4] text-slate-900">PCA-based dimensionality reduction</h4>
+			</div>
+
+			<!-- Body Large -->
+			<div class="grid items-baseline gap-4 border-b border-slate-100 pb-8 md:grid-cols-[180px_1fr]">
+				<div>
+					<p class="font-mono text-xs text-slate-400">Body Large</p>
+					<p class="font-mono text-xs text-slate-400">18px / 400</p>
+				</div>
+				<p class="max-w-prose text-lg leading-relaxed text-slate-600">
+					Polis is an open-source platform that uses machine learning to surface consensus among thousands of participants — in real time. No moderators. No talking points. Just collective intelligence.
+				</p>
+			</div>
+
+			<!-- Body -->
+			<div class="grid items-baseline gap-4 border-b border-slate-100 pb-8 md:grid-cols-[180px_1fr]">
+				<div>
+					<p class="font-mono text-xs text-slate-400">Body</p>
+					<p class="font-mono text-xs text-slate-400">16px / 400</p>
+				</div>
+				<p class="max-w-prose leading-relaxed text-slate-700">
+					Participants write short statements and vote — agree, disagree, or pass — on statements written by others. Under the hood, Polis runs PCA on the resulting vote matrix, clusters participants into opinion groups, and surfaces the statements that bridge divides. The algorithm prioritizes divisive statements for voting (they carry more information for group formation) while highlighting consensus statements in the final report.
+				</p>
+			</div>
+
+			<!-- Small / Caption -->
+			<div class="grid items-baseline gap-4 border-b border-slate-100 pb-8 md:grid-cols-[180px_1fr]">
+				<div>
+					<p class="font-mono text-xs text-slate-400">Small / Caption</p>
+					<p class="font-mono text-xs text-slate-400">14px / 400</p>
+				</div>
+				<p class="text-sm text-slate-500">
+					Figure 1. Opinion group visualization from a Polis conversation on ride-sharing regulation in Taipei, 2016. Each dot represents a participant; proximity indicates voting similarity.
+				</p>
+			</div>
+
+			<!-- Monospace -->
+			<div class="grid items-baseline gap-4 pb-8 md:grid-cols-[180px_1fr]">
+				<div>
+					<p class="font-mono text-xs text-slate-400">Monospace</p>
+					<p class="font-mono text-xs text-slate-400">14px / 400</p>
+				</div>
+				<pre class="overflow-x-auto rounded-lg bg-slate-900 p-5 text-sm leading-relaxed text-slate-100"><code set:text={codeExample} /></pre>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<!-- ============================================================
+     BUTTONS & INTERACTIVE
+     ============================================================ -->
+<section id="buttons" class="border-t border-slate-200 bg-slate-50 px-6 py-20">
+	<div class="mx-auto max-w-6xl">
+		<p class="mb-1 font-mono text-xs font-medium uppercase tracking-widest text-polis-500">03</p>
+		<h2 class="mb-2 text-3xl font-bold text-slate-900">Buttons &amp; interactive</h2>
+		<p class="mb-12 max-w-2xl text-slate-600">Rounded-md, medium weight, clear hierarchy. The amber accent is reserved for high-priority CTAs like "Donate."</p>
+
+		<!-- Primary -->
+		<h3 class="mb-4 text-sm font-semibold uppercase tracking-wider text-slate-500">Primary</h3>
+		<div class="mb-10 flex flex-wrap items-center gap-4">
+			<button class="rounded-md bg-polis-700 px-5 py-2.5 text-sm font-medium text-white shadow-sm transition-colors hover:bg-polis-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-polis-500">Start a conversation</button>
+			<button class="rounded-md bg-polis-700 px-4 py-2 text-sm font-medium text-white shadow-sm transition-colors hover:bg-polis-800">Sign up for Pro</button>
+			<button class="rounded-md bg-polis-700 px-4 py-2 text-sm font-medium text-white opacity-50 shadow-sm" disabled>Disabled</button>
+		</div>
+
+		<!-- Secondary -->
+		<h3 class="mb-4 text-sm font-semibold uppercase tracking-wider text-slate-500">Secondary</h3>
+		<div class="mb-10 flex flex-wrap items-center gap-4">
+			<button class="rounded-md border border-slate-300 bg-white px-5 py-2.5 text-sm font-medium text-slate-700 shadow-sm transition-colors hover:bg-slate-50 hover:text-slate-900">Learn more</button>
+			<button class="rounded-md border border-polis-300 bg-polis-50 px-4 py-2 text-sm font-medium text-polis-700 transition-colors hover:bg-polis-100">View documentation</button>
+		</div>
+
+		<!-- Accent -->
+		<h3 class="mb-4 text-sm font-semibold uppercase tracking-wider text-slate-500">Accent (Donate / high-priority CTA)</h3>
+		<div class="mb-10 flex flex-wrap items-center gap-4">
+			<button class="rounded-md bg-amber-500 px-5 py-2.5 text-sm font-semibold text-slate-900 shadow-sm transition-colors hover:bg-amber-600">Donate now</button>
+			<button class="rounded-md border-2 border-amber-500 bg-transparent px-5 py-2.5 text-sm font-semibold text-amber-600 transition-colors hover:bg-amber-50">Support our mission</button>
+		</div>
+
+		<!-- Ghost / Text -->
+		<h3 class="mb-4 text-sm font-semibold uppercase tracking-wider text-slate-500">Ghost / Text</h3>
+		<div class="mb-10 flex flex-wrap items-center gap-4">
+			<button class="rounded-md px-4 py-2 text-sm font-medium text-polis-600 transition-colors hover:bg-polis-50 hover:text-polis-700">Read the paper &rarr;</button>
+			<button class="rounded-md px-4 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-800">View on GitHub &rarr;</button>
+		</div>
+
+		<!-- Tags / Badges -->
+		<h3 class="mb-4 text-sm font-semibold uppercase tracking-wider text-slate-500">Tags &amp; Badges</h3>
+		<div class="flex flex-wrap items-center gap-2">
+			<span class="inline-flex items-center rounded-sm bg-polis-100 px-2 py-0.5 font-mono text-xs font-medium text-polis-800">open source</span>
+			<span class="inline-flex items-center rounded-sm bg-slate-100 px-2 py-0.5 font-mono text-xs font-medium text-slate-600">AGPL-3.0</span>
+			<span class="inline-flex items-center rounded-sm bg-green-100 px-2 py-0.5 font-mono text-xs font-medium text-green-800">GDPR compliant</span>
+			<span class="inline-flex items-center rounded-sm bg-amber-100 px-2 py-0.5 font-mono text-xs font-medium text-amber-800">beta</span>
+		</div>
+	</div>
+</section>
+
+
+<!-- ============================================================
+     CARDS
+     ============================================================ -->
+<section id="cards" class="border-t border-slate-200 bg-white px-6 py-20">
+	<div class="mx-auto max-w-6xl">
+		<p class="mb-1 font-mono text-xs font-medium uppercase tracking-widest text-polis-500">04</p>
+		<h2 class="mb-2 text-3xl font-bold text-slate-900">Cards</h2>
+		<p class="mb-12 max-w-2xl text-slate-600">The primary surface for organizing content. Rounded-lg, subtle shadow, white background. Hover lifts gently.</p>
+
+		<div class="grid gap-6 md:grid-cols-3">
+			<!-- Feature Card -->
+			<div class="group rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
+				<div class="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-polis-50 text-polis-500">
+					<svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"/></svg>
+				</div>
+				<h4 class="mb-2 text-lg font-semibold text-slate-900">Real-time clustering</h4>
+				<p class="text-sm leading-relaxed text-slate-600">Watch opinion groups form as participants vote. Polis uses PCA and k-means to reveal the hidden structure of a conversation.</p>
+			</div>
+
+			<!-- Feature Card -->
+			<div class="group rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
+				<div class="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-polis-50 text-polis-500">
+					<svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+				</div>
+				<h4 class="mb-2 text-lg font-semibold text-slate-900">Consensus surfacing</h4>
+				<p class="text-sm leading-relaxed text-slate-600">Automatically identify the statements that bridge divides — the ideas that every group agrees on, even when they disagree on everything else.</p>
+			</div>
+
+			<!-- Feature Card -->
+			<div class="group rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
+				<div class="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-polis-50 text-polis-500">
+					<svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+				</div>
+				<h4 class="mb-2 text-lg font-semibold text-slate-900">Global scale</h4>
+				<p class="text-sm leading-relaxed text-slate-600">Deployed by governments and institutions in 50+ countries. From a class of 30 to a nation of millions — the math scales.</p>
+			</div>
+		</div>
+
+		<!-- Stat Cards -->
+		<h3 class="mb-4 mt-16 text-sm font-semibold uppercase tracking-wider text-slate-500">Stat blocks</h3>
+		<div class="grid grid-cols-2 gap-4 md:grid-cols-4">
+			<div class="rounded-xl border border-slate-200 bg-white p-5 text-center">
+				<p class="font-display text-4xl font-bold text-polis-500">50+</p>
+				<p class="mt-1 text-sm text-slate-500">Countries</p>
+			</div>
+			<div class="rounded-xl border border-slate-200 bg-white p-5 text-center">
+				<p class="font-display text-4xl font-bold text-polis-500">2M+</p>
+				<p class="mt-1 text-sm text-slate-500">Participants</p>
+			</div>
+			<div class="rounded-xl border border-slate-200 bg-white p-5 text-center">
+				<p class="font-display text-4xl font-bold text-polis-500">10+</p>
+				<p class="mt-1 text-sm text-slate-500">Years in production</p>
+			</div>
+			<div class="rounded-xl border border-slate-200 bg-white p-5 text-center">
+				<p class="font-display text-4xl font-bold text-polis-500">100%</p>
+				<p class="mt-1 text-sm text-slate-500">Open source</p>
+			</div>
+		</div>
+
+		<!-- Testimonial Card -->
+		<h3 class="mb-4 mt-16 text-sm font-semibold uppercase tracking-wider text-slate-500">Testimonial</h3>
+		<div class="rounded-xl border border-slate-200 bg-white p-8 shadow-sm">
+			<blockquote class="mb-6 max-w-3xl text-lg leading-relaxed text-slate-700 italic">
+				"Polis allowed us to move beyond the loudest voices in the room. For the first time, we could see what the silent majority actually believed — and it changed the policy we wrote."
+			</blockquote>
+			<div class="flex items-center gap-3">
+				<div class="h-10 w-10 rounded-full bg-polis-200"></div>
+				<div>
+					<p class="text-sm font-semibold text-slate-900">Audrey Tang</p>
+					<p class="text-sm text-slate-500">Former Digital Minister, Taiwan</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Tier Comparison (Preview) -->
+		<h3 class="mb-4 mt-16 text-sm font-semibold uppercase tracking-wider text-slate-500">Tier comparison (sketch)</h3>
+		<div class="grid gap-6 md:grid-cols-3">
+			<div class="rounded-xl border border-slate-200 bg-white p-6">
+				<p class="mb-1 font-mono text-xs font-medium uppercase tracking-wider text-slate-400">Free</p>
+				<h4 class="mb-1 text-xl font-bold text-slate-900">Polis 2.0</h4>
+				<p class="mb-4 text-sm text-slate-500">For individuals, classrooms, and small orgs.</p>
+				<p class="mb-6 text-3xl font-bold text-slate-900">$0<span class="text-base font-normal text-slate-400">/mo</span></p>
+				<button class="mb-6 w-full rounded-md bg-polis-700 py-2.5 text-sm font-medium text-white transition-colors hover:bg-polis-800">Start free</button>
+				<ul class="space-y-2 text-sm text-slate-600">
+					<li class="flex items-start gap-2"><span class="mt-0.5 text-polis-500">&#10003;</span> Unlimited conversations</li>
+					<li class="flex items-start gap-2"><span class="mt-0.5 text-polis-500">&#10003;</span> Real-time visualization</li>
+					<li class="flex items-start gap-2"><span class="mt-0.5 text-polis-500">&#10003;</span> Basic analytics</li>
+					<li class="flex items-start gap-2"><span class="mt-0.5 text-polis-500">&#10003;</span> Community support</li>
+				</ul>
+			</div>
+			<div class="rounded-xl border-2 border-polis-700 bg-white p-6 shadow-md">
+				<p class="mb-1 font-mono text-xs font-medium uppercase tracking-wider text-polis-500">Recommended</p>
+				<h4 class="mb-1 text-xl font-bold text-slate-900">Polis Pro</h4>
+				<p class="mb-4 text-sm text-slate-500">For governments, enterprises, and large-scale deliberation.</p>
+				<p class="mb-6 text-3xl font-bold text-slate-900">Custom<span class="text-base font-normal text-slate-400"> pricing</span></p>
+				<button class="mb-6 w-full rounded-md bg-polis-700 py-2.5 text-sm font-medium text-white transition-colors hover:bg-polis-800">Contact sales</button>
+				<ul class="space-y-2 text-sm text-slate-600">
+					<li class="flex items-start gap-2"><span class="mt-0.5 text-polis-500">&#10003;</span> Everything in Free</li>
+					<li class="flex items-start gap-2"><span class="mt-0.5 text-polis-500">&#10003;</span> Advanced analytics &amp; export</li>
+					<li class="flex items-start gap-2"><span class="mt-0.5 text-polis-500">&#10003;</span> Custom branding</li>
+					<li class="flex items-start gap-2"><span class="mt-0.5 text-polis-500">&#10003;</span> GDPR &amp; compliance tools</li>
+					<li class="flex items-start gap-2"><span class="mt-0.5 text-polis-500">&#10003;</span> Priority support &amp; SLA</li>
+				</ul>
+			</div>
+			<div class="rounded-xl border border-slate-200 bg-white p-6">
+				<p class="mb-1 font-mono text-xs font-medium uppercase tracking-wider text-slate-400">Open Source</p>
+				<h4 class="mb-1 text-xl font-bold text-slate-900">Self-Hosted</h4>
+				<p class="mb-4 text-sm text-slate-500">Run Polis on your own infrastructure. Full control.</p>
+				<p class="mb-6 text-3xl font-bold text-slate-900">Free<span class="text-base font-normal text-slate-400"> / AGPL</span></p>
+				<button class="mb-6 w-full rounded-md border border-slate-300 bg-white py-2.5 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50">View on GitHub</button>
+				<ul class="space-y-2 text-sm text-slate-600">
+					<li class="flex items-start gap-2"><span class="mt-0.5 text-polis-500">&#10003;</span> Full source code</li>
+					<li class="flex items-start gap-2"><span class="mt-0.5 text-polis-500">&#10003;</span> Docker deployment</li>
+					<li class="flex items-start gap-2"><span class="mt-0.5 text-polis-500">&#10003;</span> Community wiki</li>
+					<li class="flex items-start gap-2"><span class="mt-0.5 text-slate-300">&#10007;</span> <span class="text-slate-400">No formal support</span></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<!-- ============================================================
+     SECTION PATTERNS
+     ============================================================ -->
+<section id="sections" class="border-t border-slate-200 bg-slate-50 px-6 py-20">
+	<div class="mx-auto max-w-6xl">
+		<p class="mb-1 font-mono text-xs font-medium uppercase tracking-widest text-polis-500">05</p>
+		<h2 class="mb-2 text-3xl font-bold text-slate-900">Section patterns</h2>
+		<p class="mb-12 max-w-2xl text-slate-600">Reusable layout blocks for composing pages. Alternating white / slate-50 backgrounds. Generous vertical padding.</p>
+	</div>
+</section>
+
+<!-- CTA Strip: Full-bleed blue -->
+<section class="bg-polis-500 px-6 py-16 text-center">
+	<div class="mx-auto max-w-3xl">
+		<h2 class="mb-4 font-display text-3xl font-bold text-white">Ready to hear what people really think?</h2>
+		<p class="mb-8 text-lg text-polis-100">Start a Polis conversation in minutes. Free, open source, no account required.</p>
+		<div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
+			<button class="rounded-md bg-white px-6 py-3 text-sm font-semibold text-polis-600 shadow-sm transition-colors hover:bg-polis-50">Start a conversation</button>
+			<button class="rounded-md border border-polis-300 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-polis-600">Learn more &rarr;</button>
+		</div>
+	</div>
+</section>
+
+<!-- CTA Strip: Light / Donate -->
+<section class="border-t border-slate-200 bg-polis-50 px-6 py-16 text-center">
+	<div class="mx-auto max-w-3xl">
+		<h2 class="mb-4 font-display text-2xl font-bold text-slate-900">Support open-source democracy</h2>
+		<p class="mb-8 text-slate-600">The Computational Democracy Project is a nonprofit. Your contribution keeps Polis free for everyone.</p>
+		<button class="rounded-md bg-amber-500 px-6 py-3 text-sm font-semibold text-slate-900 shadow-sm transition-colors hover:bg-amber-600">Donate now</button>
+	</div>
+</section>
+
+<!-- Feature Split: Text + Visual -->
+<section class="border-t border-slate-200 bg-white px-6 py-20">
+	<div class="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2">
+		<div>
+			<p class="mb-2 font-mono text-xs font-medium uppercase tracking-wider text-polis-500">Under the hood</p>
+			<h2 class="mb-4 text-3xl font-bold text-slate-900">PCA on a vote matrix. In real time.</h2>
+			<p class="mb-6 leading-relaxed text-slate-600">
+				Every vote cast updates a sparse participant-by-statement matrix. Polis computes PCA to project participants into a low-dimensional space, then runs k-means clustering to discover opinion groups — all in real time, as votes stream in.
+			</p>
+			<a href="#" class="inline-flex items-center text-sm font-medium text-polis-600 hover:text-polis-700">Read the technical paper &rarr;</a>
+		</div>
+		<div class="flex items-center justify-center rounded-xl border border-slate-200 bg-slate-50 p-8">
+			<!-- Placeholder for data viz / illustration -->
+			<div class="relative h-64 w-full">
+				<!-- Simulated scatter plot clusters -->
+				<svg viewBox="0 0 400 250" class="h-full w-full" xmlns="http://www.w3.org/2000/svg">
+					<!-- Cluster 1 (blue) -->
+					<circle cx="120" cy="90" r="4" fill="#03a9f4" opacity="0.7"/>
+					<circle cx="135" cy="105" r="4" fill="#03a9f4" opacity="0.7"/>
+					<circle cx="110" cy="100" r="4" fill="#03a9f4" opacity="0.7"/>
+					<circle cx="128" cy="80" r="4" fill="#03a9f4" opacity="0.7"/>
+					<circle cx="145" cy="95" r="4" fill="#03a9f4" opacity="0.7"/>
+					<circle cx="115" cy="115" r="4" fill="#03a9f4" opacity="0.7"/>
+					<circle cx="140" cy="110" r="4" fill="#03a9f4" opacity="0.7"/>
+					<circle cx="100" cy="85" r="4" fill="#03a9f4" opacity="0.7"/>
+					<circle cx="130" cy="120" r="4" fill="#03a9f4" opacity="0.7"/>
+					<circle cx="118" cy="75" r="4" fill="#03a9f4" opacity="0.5"/>
+					<circle cx="105" cy="95" r="4" fill="#03a9f4" opacity="0.5"/>
+					<circle cx="125" cy="70" r="3" fill="#03a9f4" opacity="0.4"/>
+					<!-- Cluster 2 (amber) -->
+					<circle cx="280" cy="80" r="4" fill="#f59e0b" opacity="0.7"/>
+					<circle cx="295" cy="95" r="4" fill="#f59e0b" opacity="0.7"/>
+					<circle cx="270" cy="100" r="4" fill="#f59e0b" opacity="0.7"/>
+					<circle cx="290" cy="70" r="4" fill="#f59e0b" opacity="0.7"/>
+					<circle cx="305" cy="85" r="4" fill="#f59e0b" opacity="0.7"/>
+					<circle cx="275" cy="110" r="4" fill="#f59e0b" opacity="0.7"/>
+					<circle cx="300" cy="105" r="4" fill="#f59e0b" opacity="0.7"/>
+					<circle cx="260" cy="90" r="4" fill="#f59e0b" opacity="0.5"/>
+					<circle cx="310" cy="75" r="3" fill="#f59e0b" opacity="0.4"/>
+					<!-- Cluster 3 (green) -->
+					<circle cx="200" cy="170" r="4" fill="#16a34a" opacity="0.7"/>
+					<circle cx="215" cy="185" r="4" fill="#16a34a" opacity="0.7"/>
+					<circle cx="190" cy="180" r="4" fill="#16a34a" opacity="0.7"/>
+					<circle cx="210" cy="160" r="4" fill="#16a34a" opacity="0.7"/>
+					<circle cx="225" cy="175" r="4" fill="#16a34a" opacity="0.7"/>
+					<circle cx="195" cy="195" r="4" fill="#16a34a" opacity="0.7"/>
+					<circle cx="220" cy="190" r="4" fill="#16a34a" opacity="0.7"/>
+					<circle cx="180" cy="170" r="4" fill="#16a34a" opacity="0.5"/>
+					<circle cx="230" cy="165" r="3" fill="#16a34a" opacity="0.4"/>
+					<!-- Axis labels -->
+					<text x="200" y="240" text-anchor="middle" fill="#94a3b8" font-size="11" font-family="Inter, sans-serif">PC1</text>
+					<text x="15" y="130" text-anchor="middle" fill="#94a3b8" font-size="11" font-family="Inter, sans-serif" transform="rotate(-90 15 130)">PC2</text>
+					<!-- Cluster labels -->
+					<text x="120" y="55" text-anchor="middle" fill="#0288d1" font-size="10" font-family="JetBrains Mono, monospace">Group A</text>
+					<text x="285" y="55" text-anchor="middle" fill="#d97706" font-size="10" font-family="JetBrains Mono, monospace">Group B</text>
+					<text x="205" y="215" text-anchor="middle" fill="#16a34a" font-size="10" font-family="JetBrains Mono, monospace">Group C</text>
+				</svg>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<!-- ============================================================
+     TONE OF VOICE SAMPLES
+     ============================================================ -->
+<section class="border-t border-slate-200 bg-slate-50 px-6 py-20">
+	<div class="mx-auto max-w-6xl">
+		<p class="mb-1 font-mono text-xs font-medium uppercase tracking-widest text-polis-500">06</p>
+		<h2 class="mb-2 text-3xl font-bold text-slate-900">Tone of voice</h2>
+		<p class="mb-12 max-w-2xl text-slate-600">Same product, four registers. Each persona gets copy that speaks their language.</p>
+
+		<div class="grid gap-6 md:grid-cols-2">
+			<div class="rounded-xl border border-slate-200 bg-white p-6">
+				<p class="mb-3 font-mono text-xs font-medium uppercase tracking-wider text-polis-500">General audience</p>
+				<p class="text-xl font-semibold leading-snug text-slate-900">Hear everyone. Find common ground.</p>
+				<p class="mt-3 text-sm leading-relaxed text-slate-600">Polis is a free, open-source tool that helps groups of any size discover what they actually agree on — even when the conversation feels stuck.</p>
+			</div>
+			<div class="rounded-xl border border-slate-200 bg-white p-6">
+				<p class="mb-3 font-mono text-xs font-medium uppercase tracking-wider text-polis-500">Researcher</p>
+				<p class="text-xl font-semibold leading-snug text-slate-900">Dimensionality reduction on live opinion data.</p>
+				<p class="mt-3 text-sm leading-relaxed text-slate-600">Under the hood: sparse matrix factorization, real-time PCA, and k-means clustering on a participants-by-statements vote matrix. Export raw data. Reproduce everything.</p>
+			</div>
+			<div class="rounded-xl border border-slate-200 bg-white p-6">
+				<p class="mb-3 font-mono text-xs font-medium uppercase tracking-wider text-polis-500">Government / Enterprise</p>
+				<p class="text-xl font-semibold leading-snug text-slate-900">Trusted by national governments. Ready for yours.</p>
+				<p class="mt-3 text-sm leading-relaxed text-slate-600">Polis has supported legislation in Taiwan, citizen assemblies in the UK, and deliberative processes across the EU. GDPR-compliant. SOC 2 in progress. Dedicated account management available.</p>
+			</div>
+			<div class="rounded-xl border border-slate-200 bg-white p-6">
+				<p class="mb-3 font-mono text-xs font-medium uppercase tracking-wider text-polis-500">Investor / Donor</p>
+				<p class="text-xl font-semibold leading-snug text-slate-900">The infrastructure layer for collective intelligence.</p>
+				<p class="mt-3 text-sm leading-relaxed text-slate-600">We build the open-source tools that help democracies listen at scale. Backed by grants from major technology foundations. Every dollar goes to code, research, and public deployment.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<!-- ============================================================
+     FOOTER PREVIEW
+     ============================================================ -->
+<footer class="border-t border-slate-200 bg-white px-6 py-16">
+	<div class="mx-auto grid max-w-6xl gap-12 md:grid-cols-4">
+		<div>
+			<div class="mb-4 flex items-center gap-2">
+				<div class="flex h-8 w-8 items-center justify-center rounded-md bg-polis-500 font-display text-sm font-bold text-white">P</div>
+				<span class="font-display text-lg font-semibold text-slate-900">polis</span>
+			</div>
+			<p class="text-sm leading-relaxed text-slate-500">Open-source technology for collective intelligence. A project of The Computational Democracy Project.</p>
+		</div>
+		<div>
+			<h4 class="mb-4 text-sm font-semibold text-slate-900">Product</h4>
+			<ul class="space-y-2 text-sm text-slate-500">
+				<li><a href="#" class="hover:text-polis-600">Polis 2.0</a></li>
+				<li><a href="#" class="hover:text-polis-600">Polis Pro</a></li>
+				<li><a href="#" class="hover:text-polis-600">Self-Hosted</a></li>
+				<li><a href="#" class="hover:text-polis-600">Quick Start</a></li>
+			</ul>
+		</div>
+		<div>
+			<h4 class="mb-4 text-sm font-semibold text-slate-900">Community</h4>
+			<ul class="space-y-2 text-sm text-slate-500">
+				<li><a href="#" class="hover:text-polis-600">GitHub</a></li>
+				<li><a href="#" class="hover:text-polis-600">Documentation</a></li>
+				<li><a href="#" class="hover:text-polis-600">Research papers</a></li>
+				<li><a href="#" class="hover:text-polis-600">Blog</a></li>
+			</ul>
+		</div>
+		<div>
+			<h4 class="mb-4 text-sm font-semibold text-slate-900">Organization</h4>
+			<ul class="space-y-2 text-sm text-slate-500">
+				<li><a href="#" class="hover:text-polis-600">About</a></li>
+				<li><a href="#" class="hover:text-polis-600">Contact</a></li>
+				<li><a href="#" class="hover:text-polis-600">Donate</a></li>
+				<li><a href="#" class="hover:text-polis-600">Privacy policy</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="mx-auto mt-12 max-w-6xl border-t border-slate-100 pt-6 text-center">
+		<p class="text-sm text-slate-400">&copy; 2026 The Computational Democracy Project. Open source under AGPL-3.0.</p>
+	</div>
+</footer>
+
+</main>
+</Layout>
