@@ -2,11 +2,268 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Polis — Computational Democracy" description="Open-source technology for collective intelligence">
-	<main class="flex min-h-screen flex-col items-center justify-center p-8">
-		<div class="flex h-12 w-12 items-center justify-center rounded-lg bg-polis-500 font-display text-lg font-bold text-white">P</div>
-		<h1 class="mb-2 mt-4 font-display text-4xl font-bold text-slate-900">polis</h1>
-		<p class="mb-8 text-lg text-slate-500">Odysseia — site redesign in progress</p>
-		<a href="/style-guide" class="rounded-md bg-polis-500 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-polis-600">View design system &rarr;</a>
-	</main>
+<Layout title="Polis — Computational Democracy" description="Open-source technology for collective intelligence. Hear everyone. Find common ground.">
+
+<main>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="relative overflow-hidden bg-white px-6 pb-20 pt-24 md:pb-28 md:pt-32">
+	<div class="hero-grid pointer-events-none absolute inset-0 opacity-[0.04]"></div>
+	<div class="relative mx-auto max-w-4xl text-center">
+		<p class="mb-5 inline-flex items-center gap-2 rounded-full border border-polis-200 bg-polis-50 px-4 py-1.5 font-mono text-xs font-medium tracking-wide text-polis-700">
+			<span class="inline-block h-1.5 w-1.5 rounded-full bg-polis-500"></span>
+			OPEN SOURCE &middot; 50+ COUNTRIES &middot; 2M+ PARTICIPANTS
+		</p>
+		<h1 class="mb-6 text-5xl font-bold leading-[1.1] tracking-[-0.02em] text-slate-900 md:text-7xl">
+			Hear everyone.<br />Find common ground.
+		</h1>
+		<p class="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-slate-600 md:text-xl">
+			Polis is an open-source platform that uses machine learning to surface consensus among thousands of participants — in real time. No moderators. No talking points. Just collective intelligence.
+		</p>
+		<div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
+			<a href="https://pol.is" class="rounded-md bg-polis-700 px-6 py-3 text-sm font-semibold text-white no-underline shadow-sm transition-colors hover:bg-polis-800">Get started — free</a>
+			<a href="#how-it-works" class="rounded-md border border-slate-300 px-6 py-3 text-sm font-medium text-slate-700 no-underline transition-colors hover:bg-slate-50">See how it works &darr;</a>
+		</div>
+	</div>
+</section>
+
+
+<!-- ============================================================
+     SOCIAL PROOF STRIP
+     ============================================================ -->
+<section class="border-y border-slate-200 bg-slate-50 px-6 py-10">
+	<div class="mx-auto max-w-5xl">
+		<p class="mb-6 text-center text-xs font-medium uppercase tracking-widest text-slate-400">Trusted by governments, institutions, and communities worldwide</p>
+		<div class="flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
+			<span class="font-display text-sm font-semibold text-slate-300">Taiwan</span>
+			<span class="font-display text-sm font-semibold text-slate-300">United Kingdom</span>
+			<span class="font-display text-sm font-semibold text-slate-300">Finland</span>
+			<span class="font-display text-sm font-semibold text-slate-300">UNDP</span>
+			<span class="font-display text-sm font-semibold text-slate-300">Google.org</span>
+			<span class="font-display text-sm font-semibold text-slate-300">Nesta</span>
+			<span class="font-display text-sm font-semibold text-slate-300">Singapore</span>
+		</div>
+	</div>
+</section>
+
+
+<!-- ============================================================
+     HOW IT WORKS
+     ============================================================ -->
+<section id="how-it-works" class="bg-white px-6 py-20 md:py-28">
+	<div class="mx-auto max-w-5xl">
+		<div class="mb-16 text-center">
+			<p class="mb-2 font-mono text-xs font-medium uppercase tracking-widest text-polis-500">How it works</p>
+			<h2 class="mb-4 text-3xl font-bold text-slate-900 md:text-4xl">Three steps to collective intelligence</h2>
+			<p class="mx-auto max-w-2xl text-slate-600">No moderators, no turn-taking, no shouting matches. Polis lets thousands of people think together — simultaneously.</p>
+		</div>
+
+		<div class="grid gap-8 md:grid-cols-3">
+			<!-- Step 1 -->
+			<div class="relative rounded-xl border border-slate-200 bg-white p-8">
+				<div class="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-polis-50 font-display text-lg font-bold text-polis-500">1</div>
+				<h3 class="mb-3 text-xl font-semibold text-slate-900">Write statements</h3>
+				<p class="text-sm leading-relaxed text-slate-600">Participants contribute short, seed statements about the topic. Anyone can add their perspective — there's no character limit on ideas, just on individual statements.</p>
+				<div class="mt-6 space-y-2">
+					<div class="rounded-md border border-slate-200 bg-slate-50 px-3 py-2 text-xs text-slate-500">"Public transit should be free for students."</div>
+					<div class="rounded-md border border-slate-200 bg-slate-50 px-3 py-2 text-xs text-slate-500">"We need more bike lanes downtown."</div>
+				</div>
+			</div>
+
+			<!-- Step 2 -->
+			<div class="relative rounded-xl border border-slate-200 bg-white p-8">
+				<div class="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-polis-50 font-display text-lg font-bold text-polis-500">2</div>
+				<h3 class="mb-3 text-xl font-semibold text-slate-900">Vote on everything</h3>
+				<p class="text-sm leading-relaxed text-slate-600">Each participant votes — agree, disagree, or pass — on statements written by others. The algorithm prioritizes the most informative statements for each voter.</p>
+				<div class="mt-6 flex items-center justify-center gap-3">
+					<button class="rounded-md bg-green-50 px-4 py-2 text-xs font-medium text-green-700 ring-1 ring-green-200">Agree</button>
+					<button class="rounded-md bg-red-50 px-4 py-2 text-xs font-medium text-red-700 ring-1 ring-red-200">Disagree</button>
+					<button class="rounded-md bg-slate-50 px-4 py-2 text-xs font-medium text-slate-500 ring-1 ring-slate-200">Pass</button>
+				</div>
+			</div>
+
+			<!-- Step 3 -->
+			<div class="relative rounded-xl border border-slate-200 bg-white p-8">
+				<div class="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-polis-50 font-display text-lg font-bold text-polis-500">3</div>
+				<h3 class="mb-3 text-xl font-semibold text-slate-900">See the consensus</h3>
+				<p class="text-sm leading-relaxed text-slate-600">Polis runs PCA on the vote matrix and clusters participants into opinion groups. The result: a real-time map of who agrees with whom — and the ideas everyone shares.</p>
+				<div class="mt-6 flex justify-center">
+					<svg viewBox="0 0 200 120" class="h-24 w-full max-w-[200px]" xmlns="http://www.w3.org/2000/svg">
+						<circle cx="55" cy="45" r="3" fill="#03a9f4" opacity="0.7"/><circle cx="65" cy="55" r="3" fill="#03a9f4" opacity="0.7"/>
+						<circle cx="50" cy="55" r="3" fill="#03a9f4" opacity="0.6"/><circle cx="60" cy="40" r="3" fill="#03a9f4" opacity="0.7"/>
+						<circle cx="70" cy="48" r="3" fill="#03a9f4" opacity="0.5"/><circle cx="45" cy="50" r="2" fill="#03a9f4" opacity="0.4"/>
+						<circle cx="140" cy="40" r="3" fill="#f59e0b" opacity="0.7"/><circle cx="150" cy="50" r="3" fill="#f59e0b" opacity="0.7"/>
+						<circle cx="135" cy="52" r="3" fill="#f59e0b" opacity="0.6"/><circle cx="145" cy="35" r="3" fill="#f59e0b" opacity="0.7"/>
+						<circle cx="155" cy="44" r="2" fill="#f59e0b" opacity="0.4"/>
+						<circle cx="100" cy="90" r="3" fill="#16a34a" opacity="0.7"/><circle cx="110" cy="95" r="3" fill="#16a34a" opacity="0.7"/>
+						<circle cx="95" cy="98" r="3" fill="#16a34a" opacity="0.6"/><circle cx="105" cy="85" r="3" fill="#16a34a" opacity="0.5"/>
+						<text x="55" y="25" text-anchor="middle" fill="#0288d1" font-size="7" font-family="JetBrains Mono, monospace">Group A</text>
+						<text x="145" y="25" text-anchor="middle" fill="#d97706" font-size="7" font-family="JetBrains Mono, monospace">Group B</text>
+						<text x="100" y="115" text-anchor="middle" fill="#16a34a" font-size="7" font-family="JetBrains Mono, monospace">Group C</text>
+					</svg>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<!-- ============================================================
+     FEATURE HIGHLIGHTS
+     ============================================================ -->
+<section class="border-t border-slate-200 bg-slate-50 px-6 py-20 md:py-28">
+	<div class="mx-auto max-w-6xl">
+		<div class="mb-16 text-center">
+			<p class="mb-2 font-mono text-xs font-medium uppercase tracking-widest text-polis-500">Capabilities</p>
+			<h2 class="text-3xl font-bold text-slate-900 md:text-4xl">Built for real-world deliberation</h2>
+		</div>
+
+		<div class="grid gap-6 md:grid-cols-3">
+			<div class="group rounded-xl border border-slate-200 bg-white p-8 shadow-sm transition-shadow hover:shadow-md">
+				<div class="mb-5 flex h-11 w-11 items-center justify-center rounded-lg bg-polis-50 text-polis-500">
+					<svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"/></svg>
+				</div>
+				<h4 class="mb-2 text-lg font-semibold text-slate-900">Real-time clustering</h4>
+				<p class="text-sm leading-relaxed text-slate-600">Watch opinion groups form as participants vote. Polis uses PCA and k-means to reveal the hidden structure of a conversation — live, as votes stream in.</p>
+			</div>
+
+			<div class="group rounded-xl border border-slate-200 bg-white p-8 shadow-sm transition-shadow hover:shadow-md">
+				<div class="mb-5 flex h-11 w-11 items-center justify-center rounded-lg bg-polis-50 text-polis-500">
+					<svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+				</div>
+				<h4 class="mb-2 text-lg font-semibold text-slate-900">Consensus surfacing</h4>
+				<p class="text-sm leading-relaxed text-slate-600">Automatically identify the statements that bridge divides — the ideas that every group agrees on, even when they disagree on everything else.</p>
+			</div>
+
+			<div class="group rounded-xl border border-slate-200 bg-white p-8 shadow-sm transition-shadow hover:shadow-md">
+				<div class="mb-5 flex h-11 w-11 items-center justify-center rounded-lg bg-polis-50 text-polis-500">
+					<svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+				</div>
+				<h4 class="mb-2 text-lg font-semibold text-slate-900">Global scale</h4>
+				<p class="text-sm leading-relaxed text-slate-600">Deployed by governments and institutions in 50+ countries. From a class of 30 to a nation of millions — the math scales.</p>
+			</div>
+		</div>
+
+		<!-- Stats row -->
+		<div class="mt-12 grid grid-cols-2 gap-4 md:grid-cols-4">
+			<div class="rounded-xl border border-slate-200 bg-white p-5 text-center">
+				<p class="font-display text-4xl font-bold text-polis-500">50+</p>
+				<p class="mt-1 text-sm text-slate-500">Countries</p>
+			</div>
+			<div class="rounded-xl border border-slate-200 bg-white p-5 text-center">
+				<p class="font-display text-4xl font-bold text-polis-500">2M+</p>
+				<p class="mt-1 text-sm text-slate-500">Participants</p>
+			</div>
+			<div class="rounded-xl border border-slate-200 bg-white p-5 text-center">
+				<p class="font-display text-4xl font-bold text-polis-500">10+</p>
+				<p class="mt-1 text-sm text-slate-500">Years in production</p>
+			</div>
+			<div class="rounded-xl border border-slate-200 bg-white p-5 text-center">
+				<p class="font-display text-4xl font-bold text-polis-500">100%</p>
+				<p class="mt-1 text-sm text-slate-500">Open source</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<!-- ============================================================
+     CASE STUDY TEASER
+     ============================================================ -->
+<section class="border-t border-slate-200 bg-white px-6 py-20 md:py-28">
+	<div class="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2">
+		<div>
+			<p class="mb-2 font-mono text-xs font-medium uppercase tracking-wider text-polis-500">Case study</p>
+			<h2 class="mb-4 text-3xl font-bold text-slate-900">vTaiwan: from protest to policy</h2>
+			<p class="mb-6 leading-relaxed text-slate-600">
+				Born from the Sunflower Movement, vTaiwan used Polis to give 200,000+ citizens a direct voice in national policy. The result: legislation on ride-sharing, telemedicine, and online alcohol sales — shaped by collective intelligence, not lobbying.
+			</p>
+			<blockquote class="mb-6 border-l-2 border-polis-300 pl-4 italic text-slate-600">
+				"Polis allowed us to move beyond the loudest voices in the room."
+				<footer class="mt-2 text-sm font-medium not-italic text-slate-500">— Audrey Tang, Former Digital Minister, Taiwan</footer>
+			</blockquote>
+			<a href="/case-studies" class="inline-flex items-center text-sm font-medium text-polis-600 no-underline hover:text-polis-700">View all case studies &rarr;</a>
+		</div>
+		<div class="flex items-center justify-center rounded-xl border border-slate-200 bg-slate-50 p-8">
+			<div class="w-full max-w-sm text-center">
+				<div class="mb-6 grid grid-cols-3 gap-4">
+					<div>
+						<p class="font-display text-2xl font-bold text-polis-500">200K+</p>
+						<p class="mt-0.5 text-xs text-slate-500">participants</p>
+					</div>
+					<div>
+						<p class="font-display text-2xl font-bold text-polis-500">26</p>
+						<p class="mt-0.5 text-xs text-slate-500">issues debated</p>
+					</div>
+					<div>
+						<p class="font-display text-2xl font-bold text-polis-500">80%</p>
+						<p class="mt-0.5 text-xs text-slate-500">consensus rate</p>
+					</div>
+				</div>
+				<div class="rounded-lg border border-polis-200 bg-polis-50 px-4 py-3 text-xs text-polis-700">
+					vTaiwan has been cited as a model for digital democracy by governments worldwide.
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<!-- ============================================================
+     FOR GOVERNMENTS STRIP
+     ============================================================ -->
+<section class="bg-polis-950 px-6 py-20 text-center">
+	<div class="mx-auto max-w-3xl">
+		<p class="mb-2 font-mono text-xs font-medium uppercase tracking-widest text-polis-400">For governments & institutions</p>
+		<h2 class="mb-4 font-display text-3xl font-bold text-white">Trusted by national governments.<br />Ready for yours.</h2>
+		<p class="mb-8 text-lg text-slate-300">
+			Polis Pro offers advanced analytics, GDPR compliance tools, custom branding, SSO, and dedicated support — everything you need for institutional-scale deliberation.
+		</p>
+		<div class="mb-8 flex flex-wrap items-center justify-center gap-3">
+			<span class="inline-flex items-center rounded-sm bg-polis-900 px-3 py-1 font-mono text-xs text-polis-300">GDPR</span>
+			<span class="inline-flex items-center rounded-sm bg-polis-900 px-3 py-1 font-mono text-xs text-polis-300">SOC 2 (in progress)</span>
+			<span class="inline-flex items-center rounded-sm bg-polis-900 px-3 py-1 font-mono text-xs text-polis-300">WCAG</span>
+			<span class="inline-flex items-center rounded-sm bg-polis-900 px-3 py-1 font-mono text-xs text-polis-300">Open source auditability</span>
+		</div>
+		<div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
+			<a href="/pro" class="rounded-md bg-white px-6 py-3 text-sm font-semibold text-polis-700 no-underline shadow-sm transition-colors hover:bg-polis-50">Learn about Polis Pro</a>
+			<a href="/contact" class="rounded-md border border-polis-700 px-6 py-3 text-sm font-medium text-polis-200 no-underline transition-colors hover:bg-polis-900">Request a demo &rarr;</a>
+		</div>
+	</div>
+</section>
+
+
+<!-- ============================================================
+     INTERACTIVE DEMO SLOT (placeholder for Phase 5)
+     ============================================================ -->
+<section class="border-t border-slate-200 bg-white px-6 py-20 md:py-28">
+	<div class="mx-auto max-w-4xl text-center">
+		<p class="mb-2 font-mono text-xs font-medium uppercase tracking-widest text-polis-500">Try it</p>
+		<h2 class="mb-4 text-3xl font-bold text-slate-900">See Polis in action</h2>
+		<p class="mx-auto mb-10 max-w-2xl text-slate-600">Experience how collective intelligence works. This interactive demo lets you explore a real Polis conversation.</p>
+		<div class="flex items-center justify-center rounded-xl border-2 border-dashed border-slate-300 bg-slate-50 px-8 py-20">
+			<div>
+				<p class="font-mono text-sm text-slate-400">[ Interactive demo — coming in Phase 5 ]</p>
+				<p class="mt-2 text-xs text-slate-300">Embedded Polis conversation or animated clustering visualization</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<!-- ============================================================
+     DONATE CTA STRIP
+     ============================================================ -->
+<section class="border-t border-slate-200 bg-polis-50 px-6 py-16 text-center">
+	<div class="mx-auto max-w-3xl">
+		<h2 class="mb-4 font-display text-2xl font-bold text-slate-900">Support open-source democracy</h2>
+		<p class="mb-8 text-slate-600">The Computational Democracy Project is a nonprofit. Your contribution keeps Polis free for everyone — from classrooms to countries.</p>
+		<a href="/donate" class="rounded-md bg-amber-500 px-6 py-3 text-sm font-semibold text-slate-900 no-underline shadow-sm transition-colors hover:bg-amber-600">Donate now</a>
+	</div>
+</section>
+
+</main>
+
 </Layout>
