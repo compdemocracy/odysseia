@@ -16,6 +16,9 @@ const {
 	hideNav = false,
 	hideFooter = false,
 } = Astro.props;
+const previewGateEnabled = import.meta.env.PUBLIC_PREVIEW_GATE_ENABLED === 'true';
+const previewPasswordHash = (import.meta.env.PUBLIC_PREVIEW_PASSWORD_SHA256 ?? '').toLowerCase();
+const previewStorageKey = 'odysseia-preview-gate-unlocked-v1';
 ---
 
 <!doctype html>
@@ -37,8 +40,112 @@ const {
 		/>
 	</head>
 	<body class="min-h-screen bg-white antialiased">
-		{!hideNav && <Nav />}
-		<slot />
-		{!hideFooter && <Footer />}
+		{previewGateEnabled && (
+			<div
+				id="preview-gate"
+				class="fixed inset-0 z-[100] flex min-h-screen items-center justify-center bg-slate-950/70 px-6 py-10 backdrop-blur-sm"
+				role="dialog"
+				aria-modal="true"
+				aria-labelledby="preview-gate-title"
+			>
+				<div class="w-full max-w-md rounded-2xl border border-slate-200 bg-white p-8 shadow-2xl">
+					<p class="mb-2 font-mono text-xs font-medium uppercase tracking-widest text-polis-500">Internal preview</p>
+					<h1 id="preview-gate-title" class="mb-3 text-2xl font-bold text-slate-900">Enter password to continue</h1>
+					<p class="mb-6 text-sm text-slate-600">This preview is intentionally gated while the site is under active development.</p>
+					<form id="preview-gate-form" class="space-y-4">
+						<label for="preview-gate-password" class="block text-sm font-medium text-slate-700">Password</label>
+						<input
+							id="preview-gate-password"
+							name="password"
+							type="password"
+							autocomplete="current-password"
+							required
+							class="w-full rounded-md border border-slate-300 px-3 py-2 text-sm text-slate-900"
+						/>
+						<p id="preview-gate-error" class="hidden text-sm font-medium text-red-600" role="alert"></p>
+						<button type="submit" class="w-full rounded-md bg-polis-700 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-polis-800">Unlock preview</button>
+					</form>
+					<noscript>
+						<p class="mt-4 text-xs text-slate-500">JavaScript is required to use this preview gate.</p>
+					</noscript>
+				</div>
+			</div>
+		)}
+
+		<div id="preview-content" class:list={[previewGateEnabled && 'hidden']}>
+			{!hideNav && <Nav />}
+			<slot />
+			{!hideFooter && <Footer />}
+		</div>
+
+		{
+			previewGateEnabled && (
+				<script is:inline define:vars={{ previewPasswordHash, previewStorageKey }}>
+					const gate = document.getElementById('preview-gate');
+					const content = document.getElementById('preview-content');
+					const form = document.getElementById('preview-gate-form');
+					const passwordInput = document.getElementById('preview-gate-password');
+					const errorText = document.getElementById('preview-gate-error');
+
+					const showError = (message) => {
+						if (!errorText) return;
+						errorText.textContent = message;
+						errorText.classList.remove('hidden');
+					};
+
+					const clearError = () => {
+						if (!errorText) return;
+						errorText.textContent = '';
+						errorText.classList.add('hidden');
+					};
+
+					const unlockPreview = () => {
+						content?.classList.remove('hidden');
+						gate?.classList.add('hidden');
+					};
+
+					const lockPreview = () => {
+						content?.classList.add('hidden');
+						gate?.classList.remove('hidden');
+					};
+
+					const hashPassword = async (password) => {
+						const encoded = new TextEncoder().encode(password);
+						const digest = await crypto.subtle.digest('SHA-256', encoded);
+						return Array.from(new Uint8Array(digest), (byte) => byte.toString(16).padStart(2, '0')).join('');
+					};
+
+					if (!previewPasswordHash) {
+						lockPreview();
+						showError('Preview gate is enabled, but no password hash is configured.');
+					} else if (sessionStorage.getItem(previewStorageKey) === '1') {
+						unlockPreview();
+					} else {
+						lockPreview();
+						passwordInput?.focus();
+					}
+
+					form?.addEventListener('submit', async (event) => {
+						event.preventDefault();
+						if (!passwordInput) return;
+
+						clearError();
+						const enteredPassword = passwordInput.value;
+						const enteredHash = await hashPassword(enteredPassword);
+
+						if (enteredHash === previewPasswordHash) {
+							sessionStorage.setItem(previewStorageKey, '1');
+							passwordInput.value = '';
+							unlockPreview();
+							return;
+						}
+
+						passwordInput.value = '';
+						showError('Incorrect password. Try again.');
+						passwordInput.focus();
+					});
+				</script>
+			)
+		}
 	</body>
 </html>
