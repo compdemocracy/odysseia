@@ -19,7 +19,7 @@ npm run build
 
 The repository includes a GitHub Actions workflow at:
 
-`/home/runner/work/odysseia/odysseia/.github/workflows/deploy.yml`
+`.github/workflows/deploy.yml`
 
 It deploys to GitHub Pages on pushes to `main`.
 

@@ -112,7 +112,7 @@ const previewStorageKey = 'odysseia-preview-gate-unlocked-v1';
 					const hashPassword = async (password) => {
 						const encoded = new TextEncoder().encode(password);
 						const digest = await crypto.subtle.digest('SHA-256', encoded);
-						return Array.from(new Uint8Array(digest), (byte) => byte.toString(16).padStart(2, '0')).join('');
+						return Array.from(new Uint8Array(digest), (byte) => byte.toString(16).padStart(2, '0')).join('').toLowerCase();
 					};
 
 					if (!previewPasswordHash) {
