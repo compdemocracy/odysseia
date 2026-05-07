@@ -1,46 +1,46 @@
-# Astro Starter Kit: Basics
+# Odysseia
+
+Public-facing marketing site for Polis, built with Astro + Tailwind.
+
+## Local development
 
 ```sh
-npm create astro@latest -- --template basics
+npm install
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Build
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+```sh
+npm run build
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## GitHub Pages deployment
 
-## 🧞 Commands
+The repository includes a GitHub Actions workflow at:
 
-All commands are run from the root of the project, from a terminal:
+`.github/workflows/deploy.yml`
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+It deploys to GitHub Pages on pushes to `main`.
 
-## 👀 Want to learn more?
+## Preview password gate
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+This project supports a lightweight client-side preview gate for internal testing.
+
+Environment variables:
+
+- `PUBLIC_PREVIEW_GATE_ENABLED=true` enables the gate.
+- `PUBLIC_PREVIEW_PASSWORD_SHA256=<sha256 hex digest>` sets the accepted password hash.
+
+### Generate a SHA-256 hash
+
+```sh
+node -e "const crypto=require('crypto');console.log(crypto.createHash('sha256').update(process.argv[1]).digest('hex'))" "your-strong-password"
+```
+
+### GitHub configuration
+
+1. In repository settings, add a secret named `PREVIEW_PASSWORD_SHA256` containing the hash.
+2. Enable GitHub Pages and set source to **GitHub Actions**.
+
+The gate is intentionally lightweight and suitable only for low-risk preview protection.
