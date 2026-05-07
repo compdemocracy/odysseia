@@ -29,8 +29,8 @@ This project supports a lightweight client-side preview gate for internal testin
 
 Environment variables:
 
-- `PUBLIC_PREVIEW_GATE_ENABLED=true` enables the gate.
-- `PUBLIC_PREVIEW_PASSWORD_SHA256=<sha256 hex digest>` sets the accepted password hash.
+- `PREVIEW_GATE_ENABLED=true` enables the gate.
+- `PREVIEW_PASSWORD_SHA256=<sha256 hex digest>` sets the accepted password hash.
 
 ### Generate a SHA-256 hash
 
