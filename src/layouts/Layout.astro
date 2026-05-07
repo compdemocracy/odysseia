@@ -53,17 +53,19 @@ const previewStorageKey = 'odysseia-preview-gate-unlocked-v1';
 					<h1 id="preview-gate-title" class="mb-3 text-2xl font-bold text-slate-900">Enter password to continue</h1>
 					<p class="mb-6 text-sm text-slate-600">This preview is intentionally gated while the site is under active development.</p>
 					<form id="preview-gate-form" class="space-y-4">
-						<label for="preview-gate-password" class="block text-sm font-medium text-slate-700">Password</label>
-						<input
-							id="preview-gate-password"
-							name="password"
-							type="password"
-							autocomplete="current-password"
-							required
-							class="w-full rounded-md border border-slate-300 px-3 py-2 text-sm text-slate-900"
-						/>
+						<label for="preview-gate-password" class="block text-sm font-medium text-slate-700">
+							Password
+							<input
+								id="preview-gate-password"
+								name="password"
+								type="password"
+								autocomplete="current-password"
+								required
+								class="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-polis-500 focus:ring-offset-2"
+							/>
+						</label>
 						<p id="preview-gate-error" class="hidden text-sm font-medium text-red-600" role="alert"></p>
-						<button type="submit" class="w-full rounded-md bg-polis-700 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-polis-800">Unlock preview</button>
+						<button type="submit" class="w-full rounded-md bg-polis-700 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-polis-800 focus:outline-none focus:ring-2 focus:ring-polis-500 focus:ring-offset-2">Unlock preview</button>
 					</form>
 					<noscript>
 						<p class="mt-4 text-xs text-slate-500">JavaScript is required to use this preview gate.</p>
