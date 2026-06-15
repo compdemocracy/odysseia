@@ -12,7 +12,7 @@ export interface CaseStudy {
 	title: string;
 	country: string;
 	region: 'Asia' | 'Europe' | 'North America' | 'Global';
-	sector: 'Government' | 'Civil society' | 'Political party' | 'Education';
+	sector: 'Government' | 'Civil society' | 'Political movement' | 'Education';
 	year: string;
 	summary: string;
 	participants: string;
@@ -112,7 +112,7 @@ export const caseStudies: CaseStudy[] = [
 		title: 'Aufstehen: the largest single Polis conversation',
 		country: 'Germany',
 		region: 'Europe',
-		sector: 'Political party',
+		sector: 'Political movement',
 		year: '2018',
 		summary:
 			'The German political movement Aufstehen hosted what became the most-participated single Polis conversation, shaping its platform.',

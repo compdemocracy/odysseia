@@ -113,7 +113,7 @@ Below the comparison: FAQ section addressing common questions (data ownership, m
 
 Grid of case study cards. Each card: country flag/icon, title, one-sentence summary, participant count badge, link to detail page.
 
-Filterable by: region, scale, sector (government, civil society, political party, education).
+Filterable by: region, scale, sector (government, civil society, political movement, education).
 
 ### `/case-studies/[slug]` — Individual Case Study
 
@@ -134,7 +134,7 @@ Known case studies to build out:
 1. **vTaiwan** (2014–ongoing) — Taiwan. Flagship. 200K+ participants. National legislation on ride-sharing, telemedicine, online alcohol sales. Originated from Sunflower Movement.
 2. **Bowling Green, KY** — USA. Local consensus-building. ~2,000 of 65,000 residents (3% participation rate).
 3. **Demos** (2020) — UK. First nationally representative Polis sample. Data-driven political campaigning attitudes.
-4. **Aufstehen** — Germany. Most participants ever in a single Polis conversation. Political party platform formation.
+4. **Aufstehen** — Germany. Most participants ever in a single Polis conversation. Political platform formation.
 5. *(Additional case studies to be sourced from CompDemocracy team — Finland, UNDP, Singapore, others.)*
 
 ### `/press` — Media Coverage
