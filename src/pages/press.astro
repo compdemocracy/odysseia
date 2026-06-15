@@ -1,0 +1,114 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+interface PressItem {
+	publication: string;
+	title: string;
+	year: string;
+	excerpt: string;
+	url: string;
+}
+
+// Placeholder list — to be replaced with the sourced, up-to-date media list
+// from the CompDemocracy team (superseding compdemocracy.org/Media-coverage).
+const coverage: PressItem[] = [
+	{
+		publication: 'Wired',
+		title: 'How Polis influenced Twitter\u2019s Community Notes',
+		year: '2022',
+		excerpt: 'Placeholder excerpt describing coverage of Polis as a precursor to bridging-based ranking systems.',
+		url: '#',
+	},
+	{
+		publication: 'The Economist',
+		title: 'Open-source ML tools for deliberation',
+		year: '2022',
+		excerpt: 'Placeholder excerpt. Op-ed by Darshana Narayanan on machine learning for democratic deliberation.',
+		url: '#',
+	},
+	{
+		publication: 'Chatham House',
+		title: 'vTaiwan and the OpenAI Democratic Inputs to AI collaboration',
+		year: '2023',
+		excerpt: 'Placeholder excerpt on the collaboration exploring democratic inputs to AI systems.',
+		url: '#',
+	},
+	{
+		publication: 'arXiv',
+		title: 'Opportunities and Risks of LLMs for Scalable Deliberation with Polis',
+		year: '2023',
+		excerpt: 'Placeholder excerpt. Research paper examining large language models applied to Polis-style deliberation.',
+		url: '#',
+	},
+];
+
+const years = Array.from(new Set(coverage.map((item) => item.year))).sort().reverse();
+---
+
+<Layout title="Press — Polis in the media" description="Media coverage, press mentions, and research featuring Polis and computational democracy.">
+
+<main>
+
+<!-- Hero -->
+<section class="bg-white px-6 pb-12 pt-24 md:pt-32">
+	<div class="mx-auto max-w-3xl text-center">
+		<p class="mb-4 font-mono text-xs font-medium uppercase tracking-widest text-polis-500">Press</p>
+		<h1 class="mb-6 text-4xl font-bold leading-[1.15] tracking-[-0.02em] text-slate-900 md:text-5xl">
+			Polis in the conversation.
+		</h1>
+		<p class="mx-auto max-w-2xl text-lg leading-relaxed text-slate-600">
+			Coverage of Polis and computational democracy from journalists, researchers, and institutions around the world.
+		</p>
+	</div>
+</section>
+
+
+<!-- Coverage list -->
+<section class="border-t border-slate-200 bg-slate-50 px-6 py-16">
+	<div class="mx-auto max-w-4xl">
+		<!-- Year filter (visual placeholder) -->
+		<div class="mb-10 flex flex-wrap items-center gap-3">
+			<span class="mr-1 text-xs font-medium uppercase tracking-wider text-slate-400">Year</span>
+			<button class="rounded-full border border-polis-300 bg-polis-50 px-4 py-1.5 text-sm font-medium text-polis-700">All</button>
+			{years.map((year) => (
+				<button class="rounded-full border border-slate-200 px-4 py-1.5 text-sm font-medium text-slate-600 transition-colors hover:border-slate-300 hover:bg-slate-50">{year}</button>
+			))}
+		</div>
+
+		<ul class="space-y-4">
+			{coverage.map((item) => (
+				<li>
+					<a href={item.url} class="group flex flex-col gap-2 rounded-xl border border-slate-200 bg-white p-6 no-underline shadow-sm transition-shadow hover:shadow-md sm:flex-row sm:items-center sm:justify-between">
+						<div class="sm:pr-8">
+							<div class="mb-1 flex items-center gap-3">
+								<span class="font-display text-sm font-semibold text-polis-600">{item.publication}</span>
+								<span class="font-mono text-xs text-slate-400">{item.year}</span>
+							</div>
+							<h2 class="mb-1 text-lg font-semibold text-slate-900 group-hover:text-polis-700">{item.title}</h2>
+							<p class="text-sm leading-relaxed text-slate-600">{item.excerpt}</p>
+						</div>
+						<span class="shrink-0 text-sm font-medium text-polis-600 group-hover:text-polis-700">Read &rarr;</span>
+					</a>
+				</li>
+			))}
+		</ul>
+
+		<p class="mt-10 text-center text-sm text-slate-400">This list is being refreshed with the latest coverage. Check back soon.</p>
+	</div>
+</section>
+
+
+<!-- Press kit / contact -->
+<section class="border-t border-slate-200 bg-white px-6 py-16">
+	<div class="mx-auto max-w-3xl rounded-2xl border border-slate-200 bg-slate-50 p-8 text-center md:p-12">
+		<h2 class="mb-3 text-2xl font-bold text-slate-900">Writing about Polis?</h2>
+		<p class="mx-auto mb-8 max-w-xl text-slate-600">
+			We're happy to provide background, data, interviews, and assets. Reach out and we'll get back to you quickly.
+		</p>
+		<a href="/contact" class="rounded-md bg-polis-700 px-6 py-3 text-sm font-semibold text-white no-underline shadow-sm transition-colors hover:bg-polis-800">Press inquiry &rarr;</a>
+	</div>
+</section>
+
+</main>
+
+</Layout>

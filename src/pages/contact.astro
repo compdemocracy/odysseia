@@ -1,0 +1,110 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const topics = [
+	'General inquiry',
+	'Polis Pro demo request',
+	'Partnership / grant inquiry',
+	'Press inquiry',
+	'Technical support',
+];
+---
+
+<Layout title="Contact — Polis" description="Get in touch about Polis Pro, partnerships, press, or support.">
+
+<main>
+
+<!-- Hero -->
+<section class="bg-white px-6 pb-12 pt-24 md:pt-32">
+	<div class="mx-auto max-w-3xl text-center">
+		<p class="mb-4 font-mono text-xs font-medium uppercase tracking-widest text-polis-500">Contact</p>
+		<h1 class="mb-6 text-4xl font-bold leading-[1.15] tracking-[-0.02em] text-slate-900 md:text-5xl">
+			Let's talk.
+		</h1>
+		<p class="mx-auto max-w-2xl text-lg leading-relaxed text-slate-600">
+			Whether you're a government exploring deliberation at scale, a funder, a journalist, or just curious — we'd love to hear from you.
+		</p>
+	</div>
+</section>
+
+
+<!-- Form + sidebar -->
+<section class="border-t border-slate-200 bg-slate-50 px-6 py-16">
+	<div class="mx-auto grid max-w-5xl gap-12 md:grid-cols-[1.5fr_1fr]">
+		<!-- Form -->
+		<div class="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
+			<form id="contact-form" class="space-y-6">
+				<div>
+					<label for="topic" class="mb-1.5 block text-sm font-medium text-slate-700">What's this about?</label>
+					<select id="topic" name="topic" class="w-full rounded-md border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-polis-500 focus:ring-offset-2">
+						{topics.map((topic) => <option value={topic}>{topic}</option>)}
+					</select>
+				</div>
+
+				<div class="grid gap-6 sm:grid-cols-2">
+					<div>
+						<label for="name" class="mb-1.5 block text-sm font-medium text-slate-700">Name</label>
+						<input id="name" name="name" type="text" required class="w-full rounded-md border border-slate-300 px-3 py-2.5 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-polis-500 focus:ring-offset-2" />
+					</div>
+					<div>
+						<label for="email" class="mb-1.5 block text-sm font-medium text-slate-700">Email</label>
+						<input id="email" name="email" type="email" required class="w-full rounded-md border border-slate-300 px-3 py-2.5 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-polis-500 focus:ring-offset-2" />
+					</div>
+				</div>
+
+				<div>
+					<label for="organization" class="mb-1.5 block text-sm font-medium text-slate-700">Organization <span class="font-normal text-slate-400">(optional)</span></label>
+					<input id="organization" name="organization" type="text" class="w-full rounded-md border border-slate-300 px-3 py-2.5 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-polis-500 focus:ring-offset-2" />
+				</div>
+
+				<div>
+					<label for="message" class="mb-1.5 block text-sm font-medium text-slate-700">Message</label>
+					<textarea id="message" name="message" rows="5" required class="w-full rounded-md border border-slate-300 px-3 py-2.5 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-polis-500 focus:ring-offset-2"></textarea>
+				</div>
+
+				<button type="submit" class="w-full rounded-md bg-polis-700 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-polis-800 focus:outline-none focus:ring-2 focus:ring-polis-500 focus:ring-offset-2">Send message</button>
+
+				<p id="contact-note" class="text-center text-xs text-slate-400">
+					Form submission isn't wired to a backend yet — this is a placeholder for the development preview.
+				</p>
+			</form>
+		</div>
+
+		<!-- Sidebar -->
+		<div class="space-y-6">
+			<div class="rounded-xl border border-slate-200 bg-white p-6">
+				<h2 class="mb-1 text-base font-semibold text-slate-900">Prefer email?</h2>
+				<p class="mb-3 text-sm text-slate-600">Reach the team directly.</p>
+				<a href="mailto:hello@compdemocracy.org" class="text-sm font-medium text-polis-600 no-underline hover:text-polis-700">hello@compdemocracy.org</a>
+			</div>
+			<div class="rounded-xl border border-slate-200 bg-white p-6">
+				<h2 class="mb-1 text-base font-semibold text-slate-900">Looking for Polis Pro?</h2>
+				<p class="mb-3 text-sm text-slate-600">See features and compliance details for institutions before you reach out.</p>
+				<a href="/pro" class="text-sm font-medium text-polis-600 no-underline hover:text-polis-700">Explore Polis Pro &rarr;</a>
+			</div>
+			<div class="rounded-xl border border-slate-200 bg-white p-6">
+				<h2 class="mb-1 text-base font-semibold text-slate-900">Self-hosting?</h2>
+				<p class="mb-3 text-sm text-slate-600">Polis is fully open source. Everything you need is on GitHub.</p>
+				<a href="https://github.com/compdemocracy/polis" class="text-sm font-medium text-polis-600 no-underline hover:text-polis-700">View on GitHub &rarr;</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+</main>
+
+<script>
+	const form = document.getElementById('contact-form');
+	const note = document.getElementById('contact-note');
+	form?.addEventListener('submit', (event) => {
+		event.preventDefault();
+		if (note) {
+			note.textContent = 'Thanks! Once the backend is connected, your message will be on its way.';
+			note.classList.remove('text-slate-400');
+			note.classList.add('text-polis-600', 'font-medium');
+		}
+		(form as HTMLFormElement).reset();
+	});
+</script>
+
+</Layout>
