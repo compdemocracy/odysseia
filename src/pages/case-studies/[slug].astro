@@ -76,10 +76,12 @@ const related = getRelatedCaseStudies(study.slug);
 		</div>
 
 		<!-- Pull quote -->
-		<blockquote class="border-l-2 border-polis-300 pl-6">
-			<p class="text-xl font-medium italic leading-relaxed text-slate-700">"{study.quote.text}"</p>
-			<footer class="mt-3 text-sm font-medium not-italic text-slate-500">— {study.quote.attribution}</footer>
-		</blockquote>
+		{study.quote && (
+			<blockquote class="border-l-2 border-polis-300 pl-6">
+				<p class="text-xl font-medium italic leading-relaxed text-slate-700">"{study.quote.text}"</p>
+				<footer class="mt-3 text-sm font-medium not-italic text-slate-500">— {study.quote.attribution}</footer>
+			</blockquote>
+		)}
 	</div>
 </article>
 
