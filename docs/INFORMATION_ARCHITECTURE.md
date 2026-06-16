@@ -79,7 +79,7 @@ The homepage is a long-scroll page. "How it works" lives here, not on a separate
 | **How it works** | Accessible explainer | 3-step visual sequence: (1) Participants write short statements, (2) Everyone votes — agree, disagree, or pass, (3) Polis reveals opinion groups and consensus. Each step has an illustration or animation. Keep it concrete and visual, not abstract. |
 | **Feature highlights** | Product capabilities | 3 feature cards (real-time clustering, consensus surfacing, scalability). Each card: icon, heading, 2-sentence description. |
 | **Case study teaser** | Proof of impact | Featured case study card (vTaiwan), with a brief pull quote and outcome stat. Link to `/case-studies`. |
-| **For governments strip** | Enterprise upsell | "Trusted by national governments. Ready for yours." Compliance badges (GDPR, SOC 2), link to `/pro`. This section specifically targets the high-priority state actor persona scanning the homepage. |
+| **For governments strip** | Enterprise upsell | "Trusted by national governments. Ready for yours." Compliance badges (GDPR), link to `/pro`. This section specifically targets the high-priority state actor persona scanning the homepage. |
 | **Interactive demo** (stretch) | Engagement / wow factor | Embedded mini Polis conversation or an animated visualization of clustering in action. Phase 5 candidate, but the slot should exist in the layout now. |
 | **Donate CTA strip** | Donor conversion | "Support open-source democracy." Amber donate button. Brief mission statement. |
 | **Footer** | Navigation + legal | Standard 4-column footer. |
@@ -91,8 +91,8 @@ Target audience: government procurement officers, enterprise decision-makers, in
 | Section | Content |
 |---------|---------|
 | **Hero** | "Polis Pro — Deliberation infrastructure for governments and institutions." Subhead emphasizing support, compliance, scale. CTA: "Request a demo." |
-| **Feature grid** | Expanded feature list (everything in Free, plus: advanced analytics, data export, custom branding, SSO/SAML, GDPR tools, moderation dashboard, dedicated account management, SLA). |
-| **Compliance & trust** | Badges + brief explanations: GDPR, data residency options, SOC 2 (in progress), accessibility (WCAG), open-source auditability. |
+| **Feature grid** | Expanded feature list (everything in Free, plus: advanced analytics, data export, GDPR tools, moderation dashboard, dedicated account management, SLA). |
+| **Compliance & trust** | Badges + brief explanations: GDPR, data residency options, open-source auditability. |
 | **Case study excerpts** | 2–3 mini case study cards (government deployments specifically). |
 | **Pricing teaser** | "Custom pricing based on your needs." Link to `/pricing` for tier comparison, link to `/contact` for a quote. |
 
