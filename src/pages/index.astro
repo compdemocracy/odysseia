@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { withBase } from '../lib/url';
 ---
 
 <Layout title="Polis — Computational Democracy" description="Open-source technology for collective intelligence. Hear everyone. Find common ground.">
@@ -184,7 +185,7 @@ import Layout from '../layouts/Layout.astro';
 				"Polis allowed us to move beyond the loudest voices in the room."
 				<footer class="mt-2 text-sm font-medium not-italic text-slate-500">— Audrey Tang, Former Digital Minister, Taiwan</footer>
 			</blockquote>
-			<a href="/case-studies" class="inline-flex items-center text-sm font-medium text-polis-600 no-underline hover:text-polis-700">View all case studies &rarr;</a>
+			<a href={withBase('/case-studies')} class="inline-flex items-center text-sm font-medium text-polis-600 no-underline hover:text-polis-700">View all case studies &rarr;</a>
 		</div>
 		<div class="flex items-center justify-center rounded-xl border border-slate-200 bg-slate-50 p-8">
 			<div class="w-full max-w-sm text-center">
@@ -228,8 +229,8 @@ import Layout from '../layouts/Layout.astro';
 			<span class="inline-flex items-center rounded-sm bg-polis-900 px-3 py-1 font-mono text-xs text-polis-300">Open source auditability</span>
 		</div>
 		<div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
-			<a href="/pro" class="rounded-md bg-white px-6 py-3 text-sm font-semibold text-polis-700 no-underline shadow-sm transition-colors hover:bg-polis-50">Learn about Polis Pro</a>
-			<a href="/contact" class="rounded-md border border-polis-700 px-6 py-3 text-sm font-medium text-polis-200 no-underline transition-colors hover:bg-polis-900">Request a demo &rarr;</a>
+			<a href={withBase('/pro')} class="rounded-md bg-white px-6 py-3 text-sm font-semibold text-polis-700 no-underline shadow-sm transition-colors hover:bg-polis-50">Learn about Polis Pro</a>
+			<a href={withBase('/contact')} class="rounded-md border border-polis-700 px-6 py-3 text-sm font-medium text-polis-200 no-underline transition-colors hover:bg-polis-900">Request a demo &rarr;</a>
 		</div>
 	</div>
 </section>
@@ -260,7 +261,7 @@ import Layout from '../layouts/Layout.astro';
 	<div class="mx-auto max-w-3xl">
 		<h2 class="mb-4 font-display text-2xl font-bold text-slate-900">Support open-source democracy</h2>
 		<p class="mb-8 text-slate-600">The Computational Democracy Project is a nonprofit. Your contribution keeps Polis free for everyone — from classrooms to countries.</p>
-		<a href="/donate" class="rounded-md bg-amber-500 px-6 py-3 text-sm font-semibold text-slate-900 no-underline shadow-sm transition-colors hover:bg-amber-600">Donate now</a>
+		<a href={withBase('/donate')} class="rounded-md bg-amber-500 px-6 py-3 text-sm font-semibold text-slate-900 no-underline shadow-sm transition-colors hover:bg-amber-600">Donate now</a>
 	</div>
 </section>
 

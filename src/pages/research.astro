@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { withBase } from '../lib/url';
 
 interface Paper {
 	title: string;
@@ -170,7 +171,7 @@ const datasets = [
 			Researchers and data scientists: we welcome collaboration on deliberation, clustering, and democratic technology. Get in touch or dive into the code.
 		</p>
 		<div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
-			<a href="/contact" class="rounded-md bg-white px-6 py-3 text-sm font-semibold text-polis-700 no-underline shadow-sm transition-colors hover:bg-polis-50">Reach out</a>
+			<a href={withBase('/contact')} class="rounded-md bg-white px-6 py-3 text-sm font-semibold text-polis-700 no-underline shadow-sm transition-colors hover:bg-polis-50">Reach out</a>
 			<a href="https://github.com/compdemocracy/polis" class="rounded-md border border-polis-700 px-6 py-3 text-sm font-medium text-polis-200 no-underline transition-colors hover:bg-polis-900">View on GitHub &rarr;</a>
 		</div>
 	</div>

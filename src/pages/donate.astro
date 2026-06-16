@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { withBase } from '../lib/url';
 
 const suggestedAmounts = ['$25', '$50', '$100', '$250'];
 ---
@@ -71,7 +72,7 @@ const suggestedAmounts = ['$25', '$50', '$100', '$250'];
 				))}
 			</ul>
 
-			<a href="/contact" class="mt-auto rounded-md bg-polis-700 px-6 py-3 text-center text-sm font-semibold text-white no-underline shadow-sm transition-colors hover:bg-polis-800">Let's talk &rarr;</a>
+			<a href={withBase('/contact')} class="mt-auto rounded-md bg-polis-700 px-6 py-3 text-center text-sm font-semibold text-white no-underline shadow-sm transition-colors hover:bg-polis-800">Let's talk &rarr;</a>
 		</div>
 	</div>
 </section>

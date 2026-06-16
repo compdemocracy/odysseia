@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { withBase } from '../lib/url';
 
 interface PressItem {
 	publication: string;
@@ -105,7 +106,7 @@ const years = Array.from(new Set(coverage.map((item) => item.year))).sort().reve
 		<p class="mx-auto mb-8 max-w-xl text-slate-600">
 			We're happy to provide background, data, interviews, and assets. Reach out and we'll get back to you quickly.
 		</p>
-		<a href="/contact" class="rounded-md bg-polis-700 px-6 py-3 text-sm font-semibold text-white no-underline shadow-sm transition-colors hover:bg-polis-800">Press inquiry &rarr;</a>
+		<a href={withBase('/contact')} class="rounded-md bg-polis-700 px-6 py-3 text-sm font-semibold text-white no-underline shadow-sm transition-colors hover:bg-polis-800">Press inquiry &rarr;</a>
 	</div>
 </section>
 
