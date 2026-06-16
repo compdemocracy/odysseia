@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { withBase } from '../lib/url';
 
 const topics = [
 	'General inquiry',
@@ -80,7 +81,7 @@ const topics = [
 			<div class="rounded-xl border border-slate-200 bg-white p-6">
 				<h2 class="mb-1 text-base font-semibold text-slate-900">Looking for Polis Pro?</h2>
 				<p class="mb-3 text-sm text-slate-600">See features and compliance details for institutions before you reach out.</p>
-				<a href="/pro" class="text-sm font-medium text-polis-600 no-underline hover:text-polis-700">Explore Polis Pro &rarr;</a>
+				<a href={withBase('/pro')} class="text-sm font-medium text-polis-600 no-underline hover:text-polis-700">Explore Polis Pro &rarr;</a>
 			</div>
 			<div class="rounded-xl border border-slate-200 bg-white p-6">
 				<h2 class="mb-1 text-base font-semibold text-slate-900">Self-hosting?</h2>
