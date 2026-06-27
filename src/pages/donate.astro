@@ -1,0 +1,111 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { withBase } from '../lib/url';
+
+const suggestedAmounts = ['$25', '$50', '$100', '$250'];
+---
+
+<Layout title="Donate — Support open-source democracy" description="Your contribution keeps Polis free and open for everyone, from classrooms to countries.">
+
+<main>
+
+<!-- Hero -->
+<section class="bg-white px-6 pb-12 pt-24 md:pt-32">
+	<div class="mx-auto max-w-3xl text-center">
+		<p class="mb-4 font-mono text-xs font-medium uppercase tracking-widest text-polis-500">Donate</p>
+		<h1 class="mb-6 text-4xl font-bold leading-[1.15] tracking-[-0.02em] text-slate-900 md:text-5xl">
+			Keep democracy open source.
+		</h1>
+		<p class="mx-auto max-w-2xl text-lg leading-relaxed text-slate-600">
+			The Computational Democracy Project is a nonprofit. Polis is free for anyone, anywhere — and donations are what keep it that way.
+		</p>
+	</div>
+</section>
+
+
+<!-- Two tracks -->
+<section class="border-t border-slate-200 bg-slate-50 px-6 py-16">
+	<div class="mx-auto grid max-w-5xl gap-6 md:grid-cols-2">
+		<!-- Small donors -->
+		<div class="flex flex-col rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
+			<p class="mb-2 font-mono text-xs font-medium uppercase tracking-wider text-polis-500">Individuals</p>
+			<h2 class="mb-3 text-2xl font-bold text-slate-900">Make a one-time gift</h2>
+			<p class="mb-6 leading-relaxed text-slate-600">
+				Your $25 keeps Polis free for a classroom. Your $100 helps a community run a consultation. Every contribution goes directly to keeping the platform open and running.
+			</p>
+
+			<div class="mb-4 grid grid-cols-4 gap-2">
+				{suggestedAmounts.map((amount, i) => (
+					<button class:list={[
+						"rounded-md border px-3 py-2.5 text-sm font-semibold transition-colors",
+						i === 1 ? "border-polis-500 bg-polis-50 text-polis-700" : "border-slate-300 text-slate-700 hover:border-slate-400 hover:bg-slate-50"
+					]}>{amount}</button>
+				))}
+			</div>
+			<div class="mb-6">
+				<label for="custom-amount" class="sr-only">Custom amount</label>
+				<input id="custom-amount" type="text" placeholder="Other amount" class="w-full rounded-md border border-slate-300 px-3 py-2.5 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-polis-500 focus:ring-offset-2" />
+			</div>
+
+			<a href="#" class="mt-auto rounded-md bg-amber-500 px-6 py-3 text-center text-sm font-semibold text-slate-900 no-underline shadow-sm transition-colors hover:bg-amber-600">Donate now</a>
+			<p class="mt-3 text-center text-xs text-slate-400">Payment processing is not yet connected in this preview.</p>
+		</div>
+
+		<!-- Large donors -->
+		<div class="flex flex-col rounded-2xl border border-polis-200 bg-polis-50 p-8 shadow-sm">
+			<p class="mb-2 font-mono text-xs font-medium uppercase tracking-wider text-polis-600">Foundations & major donors</p>
+			<h2 class="mb-3 text-2xl font-bold text-slate-900">Partner with us</h2>
+			<p class="mb-6 leading-relaxed text-slate-700">
+				Grants and major gifts fund the research, engineering, and partnerships that push collective intelligence forward. If you're a foundation or major donor, let's talk about impact at scale.
+			</p>
+
+			<ul class="mb-8 space-y-3">
+				{[
+					'Fund open-source infrastructure used in 50+ countries',
+					'Support research at the frontier of deliberation and AI',
+					'Enable deployments for under-resourced communities',
+				].map((point) => (
+					<li class="flex items-start gap-3 text-sm text-slate-700">
+						<svg class="mt-0.5 h-4 w-4 shrink-0 text-polis-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+						{point}
+					</li>
+				))}
+			</ul>
+
+			<a href={withBase('/contact')} class="mt-auto rounded-md bg-polis-700 px-6 py-3 text-center text-sm font-semibold text-white no-underline shadow-sm transition-colors hover:bg-polis-800">Let's talk &rarr;</a>
+		</div>
+	</div>
+</section>
+
+
+<!-- Transparency -->
+<section class="border-t border-slate-200 bg-white px-6 py-16 md:py-20">
+	<div class="mx-auto max-w-4xl text-center">
+		<p class="mb-2 font-mono text-xs font-medium uppercase tracking-widest text-polis-500">Where it goes</p>
+		<h2 class="mb-4 text-3xl font-bold text-slate-900">Transparent by default</h2>
+		<p class="mx-auto mb-12 max-w-2xl text-slate-600">
+			We're a small nonprofit doing outsized work. Here's roughly how contributions are put to use. (Figures are placeholders pending the latest annual breakdown.)
+		</p>
+		<div class="grid gap-6 sm:grid-cols-3">
+			<div class="rounded-xl border border-slate-200 p-6">
+				<p class="font-display text-4xl font-bold text-polis-500">70%</p>
+				<p class="mt-2 text-sm text-slate-500">Engineering & maintenance of the open-source platform</p>
+			</div>
+			<div class="rounded-xl border border-slate-200 p-6">
+				<p class="font-display text-4xl font-bold text-polis-500">20%</p>
+				<p class="mt-2 text-sm text-slate-500">Research & community partnerships</p>
+			</div>
+			<div class="rounded-xl border border-slate-200 p-6">
+				<p class="font-display text-4xl font-bold text-polis-500">10%</p>
+				<p class="mt-2 text-sm text-slate-500">Operations & administration</p>
+			</div>
+		</div>
+		<p class="mt-8 text-sm text-slate-500">
+			The Computational Democracy Project is a registered nonprofit. Donations may be tax-deductible depending on your jurisdiction.
+		</p>
+	</div>
+</section>
+
+</main>
+
+</Layout>

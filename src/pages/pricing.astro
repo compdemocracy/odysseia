@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { withBase } from '../lib/url';
 ---
 
 <Layout title="Pricing — Polis Pro" description="Power tools for pol.is conversations. Plans for individuals, nonprofits, and organizations.">
@@ -62,7 +63,7 @@ import Layout from '../layouts/Layout.astro';
 				<!-- Data & Language -->
 				<h4 class="mb-3 text-sm font-semibold text-polis-600">Data & Language</h4>
 				<ul class="mb-6 space-y-2.5 text-sm text-slate-600">
-					<li class="flex items-start gap-2.5"><span class="mt-0.5 text-polis-500">&#10003;</span> Automatic translation with professional backfill</li>
+					<li class="flex items-start gap-2.5"><span class="mt-0.5 text-polis-500">&#10003;</span> Automatic conversation translation</li>
 					<li class="flex items-start gap-2.5"><span class="mt-0.5 text-polis-500">&#10003;</span> Bulk upload seed statements (CSV/API)</li>
 					<li class="flex items-start gap-2.5"><span class="mt-0.5 text-polis-500">&#10003;</span> Raw data export via API (15-minute intervals)</li>
 					<li class="flex items-start gap-2.5"><span class="mt-0.5 text-polis-500">&#10003;</span> EU data sovereignty option</li>
@@ -116,8 +117,8 @@ import Layout from '../layouts/Layout.astro';
 					<li class="flex items-start gap-2"><span class="text-slate-300">&bull;</span> Not affiliated with an organization, campaign, or employer</li>
 					<li class="flex items-start gap-2"><span class="text-slate-300">&bull;</span> No client work or organizational deployment</li>
 				</ul>
-				<a href="https://buy.stripe.com/14A5kEebo0ay8gSaro1Jm04" class="block rounded-md border border-slate-300 bg-white py-3 text-center text-sm font-medium text-slate-700 no-underline transition-colors hover:bg-slate-50">Subscribe</a>
-			
+<a href="https://buy.stripe.com/14A5kEebo0ay8gSaro1Jm04" class="block rounded-md border border-slate-300 bg-white py-3 text-center text-sm font-medium text-slate-700 no-underline transition-colors hover:bg-slate-50">Subscribe</a>
+				<p class="mt-3 text-center text-xs text-slate-400">Upgrade to any plan at any time.</p>
 			</div>
 
 			<!-- Nonprofit / Public-interest -->
@@ -136,7 +137,7 @@ import Layout from '../layouts/Layout.astro';
 					<li class="flex items-start gap-2"><span class="text-slate-300">&bull;</span> Not for political campaigns or candidates</li>
 				</ul>
 				<p class="mb-8 text-xs leading-relaxed text-slate-400">This tier is offered at a reduced rate to support democratic and civic work.</p>
-				<a href="https://buy.stripe.com/14k8yd7Uhasm4ogcMO" class="block rounded-md bg-polis-700 py-3 text-center text-sm font-medium text-white no-underline transition-colors hover:bg-polis-800">Subscribe</a>
+<a href="https://buy.stripe.com/14k8yd7Uhasm4ogcMO" class="block rounded-md bg-polis-700 py-3 text-center text-sm font-medium text-white no-underline transition-colors hover:bg-polis-800">Subscribe</a>
 			</div>
 
 			<!-- Commercial -->
@@ -155,7 +156,7 @@ import Layout from '../layouts/Layout.astro';
 					<li class="flex items-start gap-2"><span class="text-slate-300">&bull;</span> Full operational cost pricing</li>
 				</ul>
 				<p class="mb-8 text-xs leading-relaxed text-slate-400">This tier reflects the full operational cost of running Polis Pro.</p>
-				<a href="/contact" class="block rounded-md border border-slate-300 bg-white py-3 text-center text-sm font-medium text-slate-700 no-underline transition-colors hover:bg-slate-50">Subscribe</a>
+<a href="https://buy.stripe.com/dR69Ch0rP1VQ2g8dQR" class="block rounded-md border border-slate-300 bg-white py-3 text-center text-sm font-medium text-slate-700 no-underline transition-colors hover:bg-slate-50">Subscribe</a>
 			</div>
 		</div>
 
@@ -225,7 +226,7 @@ import Layout from '../layouts/Layout.astro';
 
 		<div class="space-y-6">
 			{[
-				{ q: "What's the difference between Basic and Polis Pro?", a: "Basic gives you everything you need to run a Polis conversation — reporting, moderation, seed statements, and multilingual support. Polis Pro adds advanced analytics with LLM-powered reports, raw data export via API, enhanced moderation with abuse prevention, identity management, custom branding, geo-fencing, and more." },
+				{ q: "What's the difference between Basic and Polis Pro?", a: "Basic gives you everything you need to run a Polis conversation — reporting, moderation, seed statements, and multilingual support. Polis Pro adds advanced analytics with LLM-powered reports, raw data export via API, enhanced moderation with abuse prevention, identity management, geo-fencing, and more." },
 				{ q: "Do all Pro plans include the same features?", a: "Yes. Individual, Nonprofit, and Commercial plans all include the full Polis Pro feature set. The tiers differ only in pricing and eligibility — not in capabilities." },
 				{ q: "Who owns the data from my Polis conversations?", a: "You do. On our hosted platform, you can export all conversation data at any time. With the self-hosted version, your data never touches our servers." },
 				{ q: "How does the Open Data Initiative affect pricing?", a: "Organizations that contribute their public-interest conversation data to our open data portal may qualify for reduced pricing. Contact us to learn more." },
@@ -251,7 +252,7 @@ import Layout from '../layouts/Layout.astro';
 		<p class="mb-8 text-lg text-polis-100">Start a Polis conversation in minutes. Free, open source, no account required.</p>
 		<div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
 			<a href="https://pol.is" class="rounded-md bg-white px-6 py-3 text-sm font-semibold text-polis-600 no-underline shadow-sm transition-colors hover:bg-polis-50">Start a conversation</a>
-			<a href="/contact" class="rounded-md border border-polis-300 px-6 py-3 text-sm font-medium text-white no-underline transition-colors hover:bg-polis-600">Talk to us &rarr;</a>
+			<a href={withBase('/contact')} class="rounded-md border border-polis-300 px-6 py-3 text-sm font-medium text-white no-underline transition-colors hover:bg-polis-600">Talk to us &rarr;</a>
 		</div>
 	</div>
 </section>

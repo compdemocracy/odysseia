@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { withBase } from '../lib/url';
 ---
 
 <Layout title="Polis — Computational Democracy" description="Open-source technology for collective intelligence. Hear everyone. Find common ground.">
@@ -173,39 +174,28 @@ import Layout from '../layouts/Layout.astro';
      CASE STUDY TEASER
      ============================================================ -->
 <section class="border-t border-slate-200 bg-white px-6 py-20 md:py-28">
-	<div class="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2">
+	<div class="mx-auto grid max-w-6xl items-start gap-12 md:grid-cols-2">
 		<div>
 			<p class="mb-2 font-mono text-xs font-medium uppercase tracking-wider text-polis-500">Case study</p>
 			<h2 class="mb-4 text-3xl font-bold text-slate-900">vTaiwan: from protest to policy</h2>
 			<p class="mb-6 leading-relaxed text-slate-600">
 				Born from the Sunflower Movement, vTaiwan used Polis to give 200,000+ citizens a direct voice in national policy. The result: legislation on ride-sharing, telemedicine, and online alcohol sales — shaped by collective intelligence, not lobbying.
 			</p>
-			<blockquote class="mb-6 border-l-2 border-polis-300 pl-4 italic text-slate-600">
-				"Polis allowed us to move beyond the loudest voices in the room."
-				<footer class="mt-2 text-sm font-medium not-italic text-slate-500">— Audrey Tang, Former Digital Minister, Taiwan</footer>
-			</blockquote>
-			<a href="/case-studies" class="inline-flex items-center text-sm font-medium text-polis-600 no-underline hover:text-polis-700">View all case studies &rarr;</a>
+			<p class="mb-6 leading-relaxed text-slate-600">
+				More than a decade on, it's still running — and remains the longest-running national-scale deployment of Polis anywhere in the world.
+			</p>
+			<a href={withBase('/case-studies')} class="inline-flex items-center text-sm font-medium text-polis-600 no-underline hover:text-polis-700">View all case studies &rarr;</a>
 		</div>
-		<div class="flex items-center justify-center rounded-xl border border-slate-200 bg-slate-50 p-8">
-			<div class="w-full max-w-sm text-center">
-				<div class="mb-6 grid grid-cols-3 gap-4">
-					<div>
-						<p class="font-display text-2xl font-bold text-polis-500">200K+</p>
-						<p class="mt-0.5 text-xs text-slate-500">participants</p>
-					</div>
-					<div>
-						<p class="font-display text-2xl font-bold text-polis-500">26</p>
-						<p class="mt-0.5 text-xs text-slate-500">issues debated</p>
-					</div>
-					<div>
-						<p class="font-display text-2xl font-bold text-polis-500">80%</p>
-						<p class="mt-0.5 text-xs text-slate-500">consensus rate</p>
-					</div>
-				</div>
-				<div class="rounded-lg border border-polis-200 bg-polis-50 px-4 py-3 text-xs text-polis-700">
-					vTaiwan has been cited as a model for digital democracy by governments worldwide.
-				</div>
-			</div>
+		<div>
+			<p class="mb-2 font-mono text-xs font-medium uppercase tracking-wider text-polis-500">Case study</p>
+			<h2 class="mb-4 text-3xl font-bold text-slate-900">Bowling Green: turning the tables on polarization</h2>
+			<p class="mb-6 leading-relaxed text-slate-600">
+				When national politics divided a Kentucky city, residents used Polis to find the local common ground that was there all along — then used the results to hold their officials accountable.
+			</p>
+			<p class="mb-6 leading-relaxed text-slate-600">
+				Around 2,000 of the city's 65,000 residents took part — a 3% turnout that's remarkably high for a city, and proof that polarization isn't the whole story.
+			</p>
+			<a href={withBase('/case-studies/bowling-green')} class="inline-flex items-center text-sm font-medium text-polis-600 no-underline hover:text-polis-700">Read the case study &rarr;</a>
 		</div>
 	</div>
 </section>
@@ -219,17 +209,15 @@ import Layout from '../layouts/Layout.astro';
 		<p class="mb-2 font-mono text-xs font-medium uppercase tracking-widest text-polis-400">For governments & institutions</p>
 		<h2 class="mb-4 font-display text-3xl font-bold text-white">Trusted by national governments.<br />Ready for yours.</h2>
 		<p class="mb-8 text-lg text-slate-300">
-			Polis Pro offers advanced analytics, GDPR compliance tools, custom branding, SSO, and dedicated support — everything you need for institutional-scale deliberation.
+			Polis Pro offers LLM-powered reporting, EU data sovereignty, UI theme customization, flexible authentication, and on-prem deployment — everything you need for institutional-scale deliberation.
 		</p>
 		<div class="mb-8 flex flex-wrap items-center justify-center gap-3">
 			<span class="inline-flex items-center rounded-sm bg-polis-900 px-3 py-1 font-mono text-xs text-polis-300">GDPR</span>
-			<span class="inline-flex items-center rounded-sm bg-polis-900 px-3 py-1 font-mono text-xs text-polis-300">SOC 2 (in progress)</span>
-			<span class="inline-flex items-center rounded-sm bg-polis-900 px-3 py-1 font-mono text-xs text-polis-300">WCAG</span>
 			<span class="inline-flex items-center rounded-sm bg-polis-900 px-3 py-1 font-mono text-xs text-polis-300">Open source auditability</span>
 		</div>
 		<div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
-			<a href="/pro" class="rounded-md bg-white px-6 py-3 text-sm font-semibold text-polis-700 no-underline shadow-sm transition-colors hover:bg-polis-50">Learn about Polis Pro</a>
-			<a href="/contact" class="rounded-md border border-polis-700 px-6 py-3 text-sm font-medium text-polis-200 no-underline transition-colors hover:bg-polis-900">Request a demo &rarr;</a>
+			<a href={withBase('/pro')} class="rounded-md bg-white px-6 py-3 text-sm font-semibold text-polis-700 no-underline shadow-sm transition-colors hover:bg-polis-50">Learn about Polis Pro</a>
+			<a href={withBase('/contact')} class="rounded-md border border-polis-700 px-6 py-3 text-sm font-medium text-polis-200 no-underline transition-colors hover:bg-polis-900">Request a demo &rarr;</a>
 		</div>
 	</div>
 </section>
@@ -260,7 +248,7 @@ import Layout from '../layouts/Layout.astro';
 	<div class="mx-auto max-w-3xl">
 		<h2 class="mb-4 font-display text-2xl font-bold text-slate-900">Support open-source democracy</h2>
 		<p class="mb-8 text-slate-600">The Computational Democracy Project is a nonprofit. Your contribution keeps Polis free for everyone — from classrooms to countries.</p>
-		<a href="/donate" class="rounded-md bg-amber-500 px-6 py-3 text-sm font-semibold text-slate-900 no-underline shadow-sm transition-colors hover:bg-amber-600">Donate now</a>
+		<a href={withBase('/donate')} class="rounded-md bg-amber-500 px-6 py-3 text-sm font-semibold text-slate-900 no-underline shadow-sm transition-colors hover:bg-amber-600">Donate now</a>
 	</div>
 </section>
 
